@@ -35,140 +35,114 @@ Happy coding!
 
 View my live project here! [Santa's Big Christmas Quiz](https://jonathanwhitedev.github.io/santa-quiz/) 
 
-Santa's Big Christmas Quiz is a interactive website based quiz that is readily available to provide fun Christmas themed quizes for all. Traditionally many office parties and family get togethers incorporate a quiz of some sort, and many have to make there own quiz from scratch, trawlliing the web to find questions and answers. This website aims to fill the gap for a lack of online quizes.
+Python Jack is a interactive app based website providing a terminal to play the popular casino game BlackJack. This condensed easy to read, easy to play game can provide lots of fun to practice the game without using real money. 
+
+Players of the game are given a $1000 playing amount and can bet against and compete with the computer. 
 
 ![Responsive Mockup](docs/screenshots/am-i-responsive.png)
 
 The following responsive screensizes of my website can also be found here: (https://ui.dev/amiresponsive?url=https://jonathanwhitedev.github.io/voyager/index.html)
 
+## How to play Python Jack
+
+Standard casino rules:
+
+-__Player is given a $1000 kitty added to their bank at the start of the game, this can be used in increments any increments of $1 to the full $1000. A waged bet of any amount ($1000) starts the game__
+
+-__Player vs Dealer:__
+
+-__Both dealt two cards, with the Dealer having one face down (hidden).__
+
+-__Player goes first, and chooses if they want to hit or stay using the "H" or "S" key on keyboard.__
+
+-__Double Down option:__
+Player may enter additional wager up to, but not greater than original wager.
+If chosen, player receives one more card, and only one more card.
+Option to Split if both cards have same value:
+If chosen, player may place down an additional wager, for the second hand.
+The second wager can be up to, but no greater than original wager
+Player is able to double down after splitting as well.
+
+-__If upon hit, the player's hand sums to over 21, player loses.__
+
+-__Dealer must continue hitting, until sum of hand is at least 17. If over 21, dealer busts, and player wins!__
+
+-__If initial two cards dealt add to 21, player has BlackJack and is paid at 1.5:1 wager placed (eg: getting a BlackJack on an $100 wager would earn $150)__
+
+-__Any standard win(not BlackJack): the hand is paid 1:1 as a match of wager placed for that hand.__
+
+-__Your bank is updated after each game through wins and losses__
+
+-__Player may leave the game with winnings at the end of any settled bets.__
+
 ## User Stories and UX
 
-- __As a visiting user, I would like Christmas themed quizes readily available.__
+- __As a visiting user, I would like a Casino themed game readily available.__
 
-As part of the UX specification and planning phase it was noted that there is a lack of Chrismtas themed quizes on the web that are purely Chrismtas driven. The vast majority of those surveyed (100) agreed that there was no simple and fast solution to finding a christmas themed quiz online without spending a long time searching for one and very often eventually finding most sites were long winded, quizes generic and dated, or the questions were either too repetitive and easy. Santa's Big Christmas Quiz aims to fill the gap to being the best source for all christmas quiz content on the web.
+As part of the UX specification and planning phase it was noted that there was a lack of free resources to play and practice games such as blackjack online in a safe enviroment, totally add free .
 
-- __As a visiting user, I would like free Christmas quizes.__
+- __As a visiting user, I would like free blackjack related games.__
 
 Over three quarters of those surveyed (100), also came to agreement there were not many quizes online that were free. Many required signing up, and/or applications that wanted money for generated quizes on apps through App Store or Google Play, of which many were very poorly rated. Santa's Big Christmas Quiz will remain free to all and readily available to all who seek it.
 
 - __As a visiting user, I would like something easy to use.__
 
-Another shortfall noted was that many quizes online were extremely spam orientated, with many adverts spilling into the quiz and detracting the user from reading them accurately. Even if some websites had little to no adverts, they were often jumbled and messy, or too full of distracting information that was not clean and easy to use. It was also observed that most users wanted a website that could be read on a mobile or tablet rather then a computer that had easy to read fonts no matter the display used. Almost all that were surveyed in the UX consulation stage agreed there was no one website that provided an easy to use quiz online.
+Another shortfall noted was that many casino games such as blackjack online were extremely spam orientated, with many adverts spilling into the quiz and detracting the user from reading them accurately. Even if some websites had little to no adverts, they were often jumbled and messy, or too full of distracting information that was not clean and easy to use. It was also observed that most users wanted a website that could be read on a mobile or tablet rather then a computer that had easy to read fonts no matter the display used. Almost all that were surveyed in the UX consulation stage agreed there was no one webbased format that provided an easy to use game online.
 
-- __As a visiting user, I would like to share my scores.__
+- __As a visiting user, I would like my scores to be calculated.__
 
-Of half of the group surveyed, they agreed it would be useful to be able to share the scores via social media afterwards, a link is available to all who complete the quiz to post their scores and boast the best bragging rights at Christmas.
+Many of the people surveyed agreed they wanted a game that saved their progress after each tune of the game. We aim to make a simple scoring function that can handle complex additions easily and make readily availabe to the user.
 
 
-## Home Landing Page
-The landing page provides a simple and clean layout with clear information on what the website offers. "Santa's Big Christmas Quiz" is displayed in large font with a cartoon Santa Claus displayed above. This is followed with a clickable button under the main heading texts of "begin" which sends the user through onto the next page and the start of the quiz. Subtle Christmas themed colours envoke the the memories and familiarity of the season. Lastly a footer of the social media links for Santa's Big Christmas Quiz is also provided on the landing page.
+## Terminal (GitPod)
+The built in Terminal in GitPod can be used to play this game. This was used for extensive testing of the game for deployment to Heroku.
 
 ![Landing Page](docs/screenshots/home-page.png)
 
-## Quiz Pages
+## Terminal (Heroku)
 
-The interactive quiz pages runs through 15 clear and easy to navigate random questions of 15 in total. There are 4 multiple choice options to chose for the questions and require clicking on the "Submit" button to get to the next question. Each page follows the last and has simple easy to read font.  
+The deployed project is playable via Heroku as shown below. This is the area visiters of the site will play. 
 
 ![Quiz Page](docs/screenshots/questions-page.png)
 
-## Bad Santa! Result
-
-"Bad Santa!" appears upon the end of the quiz if the user scores below half of the 15 questions correctly (0-7). A picture from the film "Bad Santa" accompanies the headed text with the score. A "Restart Quiz" button takes the user back to the homepage to begin the quiz again if they so choose. Another button "Check Answers" is provided for the user to check the correct answers. Lastly a footer of the social media links for "Share My Score" is also provided.
-
-![Bad Santa Result](docs/screenshots/badsanta-result.png)
-
-## Santa Baby! Result
-"Santa Baby!" appears upon the end of the quiz if the user scores over half of the 15 questions correctly (8-14) But not all 15. A picture of Santa in sunglasses making okay hand gestures appears to accompany the headed text with the score. A "Restart Quiz" button takes the user back to the homepage to begin the quiz again if they so choose. Another button "Check Answers" is provided for the user to check the correct answers. Lastly a footer of the social media links for "Share My Score" is also provided.
-
-![Santa Baby Result](docs/screenshots/santababy-result.png)
-
-## You're A Winner! Result 
-"You're A Winner!" appears upon the end of the quiz if the user scores all of the 15 questions correctly (15). A picture of a happy Santa with hands full of dollar bills appears to accompany the headed text with the score. A "Restart Quiz" button takes the user back to the homepage to begin the quiz again if they so choose. Another button "Check Answers" is provided for the user to check the correct answers. Lastly a footer of the social media links for "Share My Score" is also provided.
-
-![You're A Winner Result](docs/screenshots/winner-result.png)
-
-## Answer Page 
-Clicking the "Check Answers" button as mentioned in the results pages, displays all the correct answers to the questions in the quiz. Another "Restart Quiz" button is provided.
-
-![Answer Page](docs/screenshots/answers-page.png)
-
 ## Features 
 
-Santa's Big Christmas Quiz includes the following;
+Python Jack includes the following;
 
 ### Existing Features
 
-- __Images__
+- __Balance__ 
 
-  - Featured on the landing page and scores pages.
-  - A large cartoon Santa Claus appears on the landing page, confirming to the user they have landed on a website that is Christmas related.
-
-  ![Santa Logo](docs/screenshots/santa-logo.png)
-
-- __Variable Images and Texts__
-
-  - Scores Pages each have a Santa Claus image and text depicting the mood of the score and of Santa, adding amusement to the user. These are:
-  - "Bad Santa"
-
-  ![Bad Santa](assets/images/bad-santa.jpeg)
-
-  - "Santa Baby"
-
-  ![Santa Baby](assets/images/good-santa.jpeg)
-
-  - "You're A Winner" 
-
-  ![Winner Santa](assets/images/winner-santa.webp)
-
-- __Button__
-  - A button is on every page and uses and stands out in a christmas red colour. This is site wide using the same styling and colour to reinforce that this is always a button.
- 
-  ![Button](docs/screenshots/buttons.png)
-
-- __The Footer__ 
-
-  - The footer section included in home and results pages gives links to the relevant social media sites for Santa's Big Christmas Quiz. The links will open to a new tab to allow easy navigation for the user. 
-  - The footer is valuable to the user as it encourages them to keep connected via social media where they can find out even more about Santa's Big Christmas Quiz and for sharing their scores.
-
-  ![Footer](docs/screenshots/footer-social.png)
-
-  - __Favicon Icon__ 
-
-   - The Favicon Icon of Santa claus is displayed in the browser tab to confirm you are at the correct page for easier navigation when multiple tabs are open and adds usability and humour to the end user.
-
-  ![Browser Icon](docs/screenshots/favicon-icon.png)
-
-  - __Statistics Container__ 
-
-  - This is a container in gold (#d7be69) displaying a rolling questions and correctly answered information to the user using javascript interaction.
-
-  ![Statistics](docs/screenshots/statistics-container.png)
-
-  - __Quiz Container__ 
-
-  - This is a container in blue (#3b81d6c6) displaying the quiz questions and mutiple choice options to the user using javascript interaction.
-
-  ![Questions](docs/screenshots/quiz-container.png)
-
-- __Correct Answer Interaction__ 
-
-  - When a user clicks an list item (question) that is correctly answered, an interaction appears highlighting to the user that the question is correct by filling the question item with a green colour temporarily before moving onto the next question.
+  - At the beginning of every game, a print statement of current balance will be shown to the player to indicate their value of chips. The player will automatically be shown a balance of $1000 at the very beginning of the game. As the player progresses this will recalculate depending on winnings and losses and will update at the end of every game. The new balance will be shown to the player at the start of the next game versus the dealer. If the player losses all their money it will be game over and a message to confirm this will appear.
 
   ![Correct](docs/screenshots/correct-answer.png) 
 
-- __Incorrect Answer Interaction__ 
+- __Another round__ 
 
-  - When a user clicks an list item (question) that is incorrectly answered, an interaction appears highlighting to the user that the question is incorrect by filling the question item with a red colour temporarily before moving onto the next question.
+  - When a player finshes a game they will be given the print message of "Would you like to play another round? Y/N" The player can select from keyboard either the Y or N key to continue or finish.
+
+- __Cards__ 
+
+- At the start of a game the player will be able to see their cards and the total calculated value of these cards. The dealers cards will also appear above the players.
+
+- __Hidden Dealers Card__ 
+
+- As with any BlackJack game, the dealers last card will always be hidden from the players view and this be displayed as the rearside of the playing card.
+
+- __Hit, Stick, Double Down__ 
+
+- As with any BlackJack game, the player has options to Hit (Ask for another card), Stick (stay with the cards and their values), or double down (bet more chips on this turn). A print statement will appear after the cards are drawn to confrim what player would like to do.
+
+
+
 
   ![Incorrect](docs/screenshots/wrong-answer.png)  
 
 
 ### Future features Left to Implement
 
-- Future features will include a larger selection of questions. This is curently set to a bank of 15, but could be increaded to literally hundreds of populated multiple choice questions to keep the question bank varied and interesting for users that repeatedly visit.
-- An about page section where by users can find out more from the creator and author of the website and get in touch.
-- Questions that invlove even more interactivity, this can be done through animated questions, games related questions incorporating advanced JavaScript.
-- A Childrens section of the quiz that would give Children under the age of 11 a chance to partake in the quiz in a fun and educational way with slightly easier questions and fun animations/images.
+- A propmt to ask for users name, this could be used to keep highscores saved into a server so that others can compete against them.
+- A login for users to save their details of winnings so they can use these again in future games could also be implemented.
 
 
 ## Typography and Colour
