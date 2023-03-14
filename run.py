@@ -111,7 +111,12 @@ class Hand:
 
     def card_design(self):
         card_list = [design.reg_card_design(card) for card in self.hand]
-        design.print_cards(cardlist)
+        design.print_cards(card_list)
+        print(f"\Total of: {self.hand_score()}\n")
+
+     def split_card_design(self):
+        card_list = [design.split_card_design(card) for card in self.hand]
+        design.print_cards(card_list)
         print(f"\Total of: {self.hand_score()}\n")
 
 """
@@ -292,6 +297,25 @@ class Dealer(Hand):
         time.sleep(0.5)
         self.card_design()
         time.sleep(0.5)
+
+#function to ensure dealer only plays (hits) to a max value of 17
+    def dealer_move(self, deck: Deck) -> None:
+        self.card_reveal()
+        while True:
+            if self.hand_score() in range(17, 22):
+                break
+            if self.hand_score() > 21:
+                self.alive = False
+                break
+            if self.hand_score() <17:
+                self.hit(deck)
+                time.sleep(1)
+                self.card_design()
+
+    def dealer_design(self):
+        hidden_card = design.reg_hidden_card
+        card_list = [hidden_card] + [design.reg_card_design(card) for card in self.hand [1:]]
+        design.print_cards(card_list)
 
 
 
