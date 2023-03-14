@@ -36,6 +36,24 @@ def reg_card_design(card):
 
     return design
 
+    def split_card_design(card):
+    suits = "Spades Diamonds Hearts Clubs".split()
+    suit_symbols = ['♠','♦','♥','♣']
+    suit_pairs = dict(zip(suits, suit_symbols))
+
+    v = card.value
+    s = suit_pairs[card.suit]
+
+    design = [
+         '╔══════╗',
+        f'║ {v:<3}  ║',
+        f'║      ║',
+        f'║  {s:>3} ║',
+         '╚══════╝'
+         ]
+
+    return design
+
     reg_hidden_card = [
      '   ╔════════════╗',
      '   ║░░░░░░░░░░░░║',
