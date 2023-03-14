@@ -203,4 +203,33 @@ class Player(Hand):
             self.hand_two.player_move(deck)
             time.sleep(1)
 
+     def design_move(self, deck: Deck) -> None:
+        self.hit(deck)
+        if self.split_cards:
+            self.split_card_design()
+        else:
+            self.card_design()
+
+    def player_move(self, deck: Deck) -> None:
+        while True:
+            if self.hand_score() > 21 or self.has_blackjack:
+                self.alive = False
+                break
+            if self.hand_score() == 21:
+                break
+            if len(self.hand) == 2:
+                action = input("Would you like to hit, stand, or double-down? Enter [h, s, or d]: ")
+            else:
+                action = input("Would you like to hit or stand: Enter [h or s]: ")
+            if action == 'd':
+                if len(self.hand) == 2:
+                    if self.confirm_double_down():
+                        self.double_down(deck)
+                        break
+            if action == "h":
+                self.visual_move(deck)
+            if action == "s":
+                break
+
+
     
