@@ -125,7 +125,7 @@ class Player(Hand):
         self.split_cards = split_cards
         self.has_blackjack = False
 
-    def deal_cards(self, deck, Deck) -> None:
+    def deal_cards(self, deck: Deck) -> None:
         self.hit(deck)
         self.hit(deck)
         print_line("Players Cards")
@@ -133,3 +133,12 @@ class Player(Hand):
         self.has_blackjack = self.check_for_blackjack()
         self.split_cards = self.check_for_split()
         self.apply_split(deck)
+
+    def add_chips(self, chips: float) -> None:
+        self.chips += chips
+    
+    def remove_chips(self, chips: float) -> None:
+        self.chips += chips
+
+    def print_balance(self):
+        print(f"\n Your chip balance is currently: ${self.chips:,.2f}\n")
