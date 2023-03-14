@@ -155,20 +155,10 @@ Google Fonts can be found here (https://fonts.google.com/)
 
 
 ## Wireframes
-- I used Balsamiq for my wireframes and drew a rough design of what I wanted my layout to look like with responses. the cards were hard to repliocate but the location of the playing in the terminal should be correct.
+- I used LUCID chart for my wireframes and drew a rough flow chart of what I wanted my layout to look like with responses. If given time i will add some more functions to my code such as a bank to give player $1000 at the start.
 
-Suits and Card Layout
-![Balsamic Layout](docs/screenshots/Balsamic-first.png)
-
-Playing Table
-![Balsamic Table](docs/screenshots/Balsamic-second.png)
-
-In Game
-![Balsamic In Game](docs/screenshots/Balsamic-third.png)
-
-Game Rules
-![Balsamic Game Rules](docs/screenshots/Balsamic-fourth.png)
-
+Flowchart
+![Lucid Chart PythonJack](docs/screenshots/PythonJack-Flowchart.jpeg)
 
 ## Technology
 __Various technologies were used in the entire process of building this website as follows;__
