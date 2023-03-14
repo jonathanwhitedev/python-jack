@@ -5,7 +5,7 @@ import time
 import os
 from typing import Sequence
 import subprocess as sp 
-import cards
+import design
 
 """
 PYTHONJACK GAME:
@@ -43,7 +43,7 @@ class Deck:
         return self.cards.pop()    
 
     def shuffle(self):
-        random.shuffle(self.cards)]
+        random.shuffle(self.cards)
 
     #Shuffle when deck is < 50% full length
     def is_shuffle_time(self):
@@ -68,3 +68,18 @@ class Deck:
         design.print_cards(d)
         design.print_cards(h)
         design.print_cards(c)   
+
+class Hand:
+
+    def __init__(self):
+        self.hand = []
+
+    def __repr__(self):
+        return "Hand()\n" + ''.join(f"({card.value}-{card.suit})" for card in self.hand)
+
+    def add_card(self, *cards: Card) -> None:
+        for card in cards:
+            self.hand.append(card)
+    
+    def remove_card(self):
+        return self.hand.pop()
