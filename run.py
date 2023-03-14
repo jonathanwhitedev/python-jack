@@ -231,5 +231,27 @@ class Player(Hand):
             if action == "s":
                 break
 
+    def compute_results(self, dealer: Dealer) -> None:
+        if self.alive and dealer.alive:
+            if self.hand_score() > dealer.hand_score():
+                print("YOU'RE A WINNER!\n")
+                self.profit = 2
+            elif self.hand_score() == dealer.hand_score():
+                print("PUSH!\n")
+                self.profit = 1
+            else:
+                print("DEALER WINS\n")
+
+        elif not self.alive:
+            if self.has_blackjack:
+                print("BLACKJACK!\n")
+                self.profit = 2.5
+            else:
+                print("YOU HAVE BUST! YOU LOSE\n")
+        else:
+            print("DEALER BUSTS! YOU WIN!\n")
+            self.profit = 2
+        self.settle()
+
 
     
