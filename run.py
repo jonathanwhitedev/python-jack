@@ -114,4 +114,22 @@ class Hand:
         design.print_cards(cardlist)
         print(f"\Total of: {self.hand_score()}\n")
 
-print(game)
+class Player(Hand):
+
+    def __init__(self, chips, bet= 0, split_cards= False):
+        super().__init__()
+        self.chips = chips
+        self.bet = bet
+        self.profit = 0
+        self.alive = True
+        self.split_cards = split_cards
+        self.has_blackjack = False
+
+    def deal_cards(self, deck, Deck) -> None:
+        self.hit(deck)
+        self.hit(deck)
+        print_line("Players Cards")
+        self.card_design()
+        self.has_blackjack = self.check_for_blackjack()
+        self.split_cards = self.check_for_split()
+        self.apply_split(deck)
