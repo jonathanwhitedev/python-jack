@@ -184,7 +184,23 @@ class Player(Hand):
         if self.hand_score() > 21:
             self.alive = False
         
-    
+    def apply_split(self, deck: Deck) -> None:
+        if self.split_cards:
+            self.added_wager()
+            self.hand_two = Player(0, split_cards= True, bet= self.bet_two)
+            transfer_card = self.remove_card()
+            self.hand_two.add_card(transfer_card)
+            self.hit(deck)
+            self.hand_two.hit(deck)
 
+            print("\nFirst Hand: ")
+            self.split_card_design()
+            time.sleep(1)
+            self.player_move(deck)
+            print("\nSecond Hand: ")
+            self.hand_two.split_card_design()
+            time.sleep(1)
+            self.hand_two.player_move(deck)
+            time.sleep(1)
 
     
