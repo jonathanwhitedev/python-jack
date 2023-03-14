@@ -270,5 +270,29 @@ class Player(Hand):
         self.profit = 0
         self.bet, self.bet_two = 0, 0
 
+class Dealer(Hand):
+
+    def __init__(self):
+        super().__init__()
+        self.alive = True
+
+    def deal_cards(self, deck: Deck) -> None:
+        self.hit(deck)
+        self.hit(deck)
+        print_line("Dealers Cards")
+        self.dealer_design()
+        time.sleep(1)
+
+    def reset(self):
+        self.hand = []
+        self.alive = True
+
+    def card_reveal(self):
+        print_line("Dealers Cards")
+        time.sleep(0.5)
+        self.card_design()
+        time.sleep(0.5)
+
+
 
     
