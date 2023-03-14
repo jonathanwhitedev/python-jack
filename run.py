@@ -17,7 +17,7 @@ design.py file for card decoration in game
 Card = collections.namedtuple('Card', ['value', 'suit'])
 
 """
-deck class to set functions for game cards, decks, shuffles, draws
+deck class to set functions for game cards, decks, shuffles, draws.
 """
 class Deck:
 
@@ -123,7 +123,7 @@ class Hand:
 class to contain functions for players hands
 calculating results of cards in play
 calculating chips betted with
-and validation steps for hit, stand, double down and splitting card selection
+and validation steps for hit, stand, double down and splitting card selection.
 """
 
 class Player(Hand):
@@ -274,6 +274,11 @@ class Player(Hand):
         self.split_cards = False
         self.profit = 0
         self.bet, self.bet_two = 0, 0
+
+
+"""
+class to contain functions for dealers rules of playing and dealing cards
+"""
 
 class Dealer(Hand):
 
