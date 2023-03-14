@@ -175,6 +175,16 @@ class Player(Hand):
                 break
     
     def confirm_double_down(self):
+        return validate_answer("\nYou will get only one more card. Please confirm selection for double down: [y / n] ", YES_NO)
+
+    def double_down(self, deck: Deck) -> None:
+        self.added_wager()
+        self.bet += self.bet_two
+        self.design_move(deck)
+        if self.hand_score() > 21:
+            self.alive = False
+        
+    
 
 
     
