@@ -16,6 +16,9 @@ cards.py file for card decoration
 
 Card = collections.namedtuple('Card', ['value', 'suit'])
 
+"""
+deck class to set functions for game cards, decks, shuffles, draws
+"""
 class Deck:
 
     values = [str(v) for v in range(2, 11)] + list('JQKA')
@@ -45,7 +48,7 @@ class Deck:
     def shuffle(self):
         random.shuffle(self.cards)
 
-    #Shuffle when deck is < 50% full length
+    #Shuffle when deck is less then < 50% full length
     def is_shuffle_time(self):
         return  len(self) < (self.length / 2)
    
@@ -69,6 +72,10 @@ class Deck:
         design.print_cards(h)
         design.print_cards(c)   
 
+"""
+class to contain functions for calculating scores from hands 
+and functions to add/remove/hit cards to table.
+"""
 class Hand:
 
     def __init__(self):
@@ -83,3 +90,33 @@ class Hand:
     
     def remove_card(self):
         return self.hand.pop()
+
+    def hit(self, deck: Deck) -> None:
+        card = deck.draw_card()
+        self.add_card(card)
+
+    def hand_score(self) -> int:
+        self.card_val = [10 if card.value in ['J','Q','K'] else 1 if card.value == 'A'
+                         else int(card.value) for card in self.hand]
+
+        self.card_scores = dict(zip(self.hand, self.card_val))
+        score = 0
+        for card in self.hand:
+            card_score = self.card_scores[card]
+            score += card_score
+        if any(card.value == 'A' for card in self.hand) and score <= 11:
+            score += 10
+            
+        return score
+
+    def card_design(self):
+        card_list = [design.reg_card_design(card) for card in self.hand]
+        design.print_cards(cardlist)
+        print(f"\Total of: {self.hand_score()}\n")
+
+def print_line(word: str) -> None:
+print(f"\n______________________[{word}]______________________________\n")
+
+def game():
+print_line('WELCOME TO PYTHONJACK! THE WEBS FAVOURITE BLACKJACK GAME')
+game()
