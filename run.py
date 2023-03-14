@@ -114,3 +114,4 @@ class Hand:
         design.print_cards(cardlist)
         print(f"\Total of: {self.hand_score()}\n")
 
+print(game)
