@@ -12,7 +12,7 @@ def print_card(*cards):
         print('   '.join(line))
 
 
-def reg_card_visual(card):
+def reg_card_design(card):
     suits = "Spades Diamonds Hearts Clubs".split()
     suit_symbols = ['♠','♦','♥','♣']
     suit_pairs = dict(zip(suits, suit_symbols))
@@ -20,7 +20,7 @@ def reg_card_visual(card):
     v = card.value
     s = suit_pairs[card.suit]
 
-    visual = [
+    design = [
 
          '  ╔════════════╗',
         f'  ║ {v:<5}      ║',
@@ -34,4 +34,4 @@ def reg_card_visual(card):
          '  ╚════════════╝'
     ]
 
-    return visual
+    return design

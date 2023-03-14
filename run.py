@@ -54,4 +54,17 @@ class Deck:
         print("Reshuffling the Deck...\n")
         time.sleep(1)
         self.reset()
-        self.shuffle()    
+        self.shuffle() 
+
+    def reset(self):
+        self.cards = [Card(value, suit) for suit in self.suits for value in self.values] * self.num_decks
+
+    def deck_visual(self):
+        s = [design.reg_card_design(card) for card in self.cards if card.suit == 'Spades']
+        d = [design.reg_card_design(card) for card in self.cards if card.suit == 'Diamonds']
+        h = [design.reg_card_design(card) for card in self.cards if card.suit == 'Hearts']
+        c = [design.reg_card_design(card) for card in self.cards if card.suit == 'Clubs']
+        design.print_cards(s)
+        design.print_cards(d)
+        design.print_cards(h)
+        design.print_cards(c)   
