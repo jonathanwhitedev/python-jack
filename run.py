@@ -1,6 +1,14 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+from __future__ import annotations
+import random
+import collections
+import time
+import os
+from typing import Sequence
+import subprocess as sp 
+import cards
 
-
+"""
+PYTHONJACK GAME:
+cards.py file for card decoration
+"""
 
