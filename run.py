@@ -114,9 +114,3 @@ class Hand:
         design.print_cards(cardlist)
         print(f"\Total of: {self.hand_score()}\n")
 
-def print_line(word: str) -> None:
-print(f"\n______________________[{word}]______________________________\n")
-
-def game():
-print_line('WELCOME TO PYTHONJACK! THE WEBS FAVOURITE BLACKJACK GAME')
-game()
