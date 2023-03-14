@@ -44,3 +44,14 @@ class Deck:
 
     def shuffle(self):
         random.shuffle(self.cards)]
+
+    #Shuffle when deck is < 50% full length
+    def is_shuffle_time(self):
+        return  len(self) < (self.length / 2)
+   
+    def shuffle_time(self):
+        clear()
+        print("Reshuffling the Deck...\n")
+        time.sleep(1)
+        self.reset()
+        self.shuffle()    
