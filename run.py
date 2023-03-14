@@ -168,11 +168,13 @@ class Player(Hand):
             if not bet.isdecimal() or float(bet) > self.bet:
                 continue
             elif float(bet) > self.chips:
-                print("You don't have enough chips for this bet. Place a new amount")
+                print("You don't have enough chips to place this bet. Place a new amount")
             else:
                 self.bet_two = float(bet)
                 self.remove_chips(float(bet))
                 break
     
+    def confirm_double_down(self):
+
 
     
