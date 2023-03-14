@@ -114,6 +114,13 @@ class Hand:
         design.print_cards(cardlist)
         print(f"\Total of: {self.hand_score()}\n")
 
+"""
+class to contain functions for players hands
+calculating results of cards in play
+calculating chips betted with
+and validation steps for hit, stand, double down and splitting card selection
+"""
+
 class Player(Hand):
 
     def __init__(self, chips, bet= 0, split_cards= False):
@@ -240,18 +247,28 @@ class Player(Hand):
                 print("PUSH!\n")
                 self.profit = 1
             else:
-                print("DEALER WINS\n")
+                print("DEALER WINS!\n")
 
         elif not self.alive:
             if self.has_blackjack:
-                print("BLACKJACK!\n")
+                print("BLACKJACK! WINNER!\n")
                 self.profit = 2.5
             else:
-                print("YOU HAVE BUST! YOU LOSE\n")
+                print("YOU HAVE BUST! YOU LOSE!\n")
         else:
             print("DEALER BUSTS! YOU WIN!\n")
             self.profit = 2
         self.settle()
+
+    def settle(self):
+        self.add_chips(self.profit*self.bet)
+
+    def reset(self):
+        self.hand = []
+        self.alive = True
+        self.split_cards = False
+        self.profit = 0
+        self.bet, self.bet_two = 0, 0
 
 
     
