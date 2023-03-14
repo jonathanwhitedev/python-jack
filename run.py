@@ -161,4 +161,18 @@ class Player(Hand):
                 self.remove_chips(float(bet))
                 break
 
+    def added_wager(self):
+        while True:
+            self.print_balance()
+            bet = input(f"How much additonal wager would you like to bet? You may bet up to your original placed bet ${self.bet} or less: $")
+            if not bet.isdecimal() or float(bet) > self.bet:
+                continue
+            elif float(bet) > self.chips:
+                print("You don't have enough chips for this bet. Place a new amount")
+            else:
+                self.bet_two = float(bet)
+                self.remove_chips(float(bet))
+                break
+    
+
     
