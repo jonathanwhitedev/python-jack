@@ -142,3 +142,23 @@ class Player(Hand):
 
     def print_balance(self):
         print(f"\n Your chip balance is currently: ${self.chips:,.2f}\n")
+
+    def check_for_blackjack(self):
+        if self.hand[0].value == self.hand[1].value:
+            return validate_answer("Do you want to split your cards?: [y / n]: ", YES_NO)
+        return False
+
+    def wager(self):
+        while True:
+            self.print_balance()
+            bet = input(f"How much would you like to bet?: $")
+            if not bet.isdecimal():
+                continue
+            elif float(bet) > self.chips:
+                print("Sorry, you don't have enough chips. Place a new amount")
+            else:
+                self.bet = float(bet)
+                self.remove_chips(float(bet))
+                break
+
+    
