@@ -9,7 +9,7 @@ import design
 
 """
 PYTHONJACK GAME:
-cards.py file for card decoration
+design.py file for card decoration in game
 """
 
 
