@@ -11,8 +11,15 @@ import design
 PYTHONJACK GAME:
 design.py file for card decoration in game
 """
+def clear():
+    sp.run(('cls' if os.name == 'nt' else 'clear'), shell=True)
 
+def validate_answer(question: str, choices: Sequence[str]) -> bool:
+    while answer := input(question).lower():
+        if answer in choices:
+            return answer == choices[0]
 
+YES_NO = 'yn'
 
 Card = collections.namedtuple('Card', ['value', 'suit'])
 
@@ -26,8 +33,8 @@ class Deck:
     suit_symbols = ['♠','♦','♥','♣']
 
     def __init__(self, num_decks=1):
-        self.num_decks = num_decks
-        self.cards = [Card(value, suit) for suit in self.suits for value in self.values] * self.num_decks
+        self.number_decks = number_decks
+        self.cards = [Card(value, suit) for suit in self.suits for value in self.values] * self.number_decks
         self.length = len(self)
 
     def __repr__(self):
@@ -60,7 +67,7 @@ class Deck:
         self.shuffle() 
 
     def reset(self):
-        self.cards = [Card(value, suit) for suit in self.suits for value in self.values] * self.num_decks
+        self.cards = [Card(value, suit) for suit in self.suits for value in self.values] * self.number_decks
 
     def deck_visual(self):
         s = [design.reg_card_design(card) for card in self.cards if card.suit == 'Spades']
@@ -347,11 +354,15 @@ def game():
 
 while True:
     if player.chips == 0:
-    print("You have lost all of your money. Game Over")
+        print("You have lost all of your money. Game Over")
         break
-    print(f"Percentage of shoe not yet dealt: {len(deck)/(52*number_decks):.2%}")
+    print(f"Percentage of shoe not yet dealt: {len(deck)/(52*number_decks):.1%}")
     if deck.is_shuffle_time():
         deck.shuffle_time()
+
+    player.wager()
+    dealer.deal_cards(deck)
+    player.deal_cards(deck)
 
 
 game()
