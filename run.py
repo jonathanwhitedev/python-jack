@@ -374,7 +374,7 @@ def game():
             if player.alive:
                 dealer.dealer_move(deck)
             player.compute_results(dealer)        
-        # SPLIT CARDS (Player)
+        # SPLIT CARDS (Hands 1 and 2)
         else:
             if player.alive or player.hand_two.alive:
                 dealer.dealer_move(deck)
