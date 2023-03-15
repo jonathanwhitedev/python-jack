@@ -344,7 +344,7 @@ def play_again() -> bool:
     return False
 
 def print_line(word: str) -> None:
-    print(f"\n════════════════════════[{word}]════════════════════════\n")
+    print(f"\n♠ ♦ ♥ ♣ ════════════════════════[{word}]════════════════════════ ♣ ♥ ♦ ♠\n")
 
 def game():
     print_line('WELCOME TO PYTHONJACK')
@@ -398,4 +398,4 @@ def game():
 if __name__ == "__main__":
     game()
 
-  reg_hidden_card  
+    
