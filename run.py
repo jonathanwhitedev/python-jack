@@ -314,7 +314,7 @@ class Dealer(Hand):
         self.card_design()
         time.sleep(0.5)
 
-#function to ensure dealer only plays (hits) to a max value of 17
+    #function to ensure dealer only plays (hits) to a max value of 17
     def dealer_move(self, deck: Deck) -> None:
         self.card_reveal()
         while True:
@@ -382,7 +382,7 @@ def game():
             print("Hand Two:")
             player.hand_two.compute_results(dealer)
 
-    # Chips won by second hand: Added to total balance
+            # Chips won by second hand: Added to total balance.
             player.chips += player.hand_two.chips
 
             player.print_balance()
