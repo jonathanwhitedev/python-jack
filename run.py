@@ -260,7 +260,7 @@ class Player(Hand):
                 print("YOU'RE A WINNER!\n")
                 self.profit = 2
             elif self.hand_score() == dealer.hand_score():
-                print("PUSH!\n")
+                print("PUSH! THE DEALER HAS DRAWN THE SAME VALUE OF CARDS AS YOU\n")
                 self.profit = 1
             else:
                 print("DEALER WINS!\n")
@@ -393,7 +393,7 @@ def game():
         else:
             break
 
-    print("Thanks for playing PythonJack. Please gamble responsibly.")
+    print("Thanks for playing PythonJack. Please remember to gamble responsibly.")
 
 if __name__ == "__main__":
     game()
