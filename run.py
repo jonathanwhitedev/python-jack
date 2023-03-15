@@ -322,6 +322,18 @@ class Dealer(Hand):
         card_list = [hidden_card] + [design.reg_card_design(card) for card in self.hand [1:]]
         design.print_cards(card_list)
 
+"""
+Game controls and validations
+"""
+def play_again() -> bool:
+    if validate_answer("Would you like to play another game of PythonJack? [y / n]: ", YES_NO):
+        clear()
+        return True
+    return False
+
+def print_line(word: str) -> None:
+    print(f"\n______________________[{word}]______________________________\n")
+
 
 
     
