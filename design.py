@@ -1,7 +1,7 @@
 """
-Regular Playing Card function including suits and symbols for use in PythonJack
+Designs and functions of playing cards including 
+suits and symbols for use in PythonJack
 """
-
 
 def print_cards(cardlist):
     for card in zip(*cardlist):
@@ -35,10 +35,9 @@ def reg_card_design(card):
     ]
 
     return design
-"""
-Hidden facedown playing card for dealer (normal casino rules)
-"""
 
+
+#Hidden facedown playing card for dealer (normal casino rules)
 
 facedown_design = [
      '   ╔════════════╗',
@@ -53,7 +52,8 @@ facedown_design = [
      '   ╚════════════╝'
      ]
 
-v, s = 'V', 'S'
+
+#Smaller cards for space in terminal to play splits
 
 def split_card_design(card):
     suits = "Spades Diamonds Hearts Clubs".split()
