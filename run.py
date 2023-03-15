@@ -329,7 +329,7 @@ class Dealer(Hand):
                 self.card_design()
 
     def dealer_design(self):
-        hidden_card = design.reg_hidden_card
+        hidden_card = design.hidden_card_design
         card_list = [hidden_card] + [design.reg_card_design(card) for card in self.hand [1:]]
         design.print_cards(card_list)
 
@@ -398,4 +398,4 @@ def game():
 if __name__ == "__main__":
     game()
 
-    
+  reg_hidden_card  

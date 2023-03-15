@@ -36,7 +36,7 @@ def reg_card_design(card):
 
     return design
 
-reg_hidden_card = [
+hidden_card_design = [
      '   ╔════════════╗',
      '   ║░░░░░░░░░░░░║',
      '   ║░░░░░░░░░░░░║',
