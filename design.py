@@ -36,7 +36,7 @@ def reg_card_design(card):
 
     return design
 
-    def split_card_design(card):
+def split_card_design(card):
     suits = "Spades Diamonds Hearts Clubs".split()
     suit_symbols = ['♠','♦','♥','♣']
     suit_pairs = dict(zip(suits, suit_symbols))

@@ -114,7 +114,7 @@ class Hand:
         design.print_cards(card_list)
         print(f"\Total of: {self.hand_score()}\n")
 
-     def split_card_design(self):
+    def split_card_design(self):
         card_list = [design.split_card_design(card) for card in self.hand]
         design.print_cards(card_list)
         print(f"\Total of: {self.hand_score()}\n")
@@ -215,7 +215,7 @@ class Player(Hand):
             self.hand_two.player_move(deck)
             time.sleep(1)
 
-     def design_move(self, deck: Deck) -> None:
+    def design_move(self, deck: Deck) -> None:
         self.hit(deck)
         if self.split_cards:
             self.split_card_design()
@@ -332,8 +332,19 @@ def play_again() -> bool:
     return False
 
 def print_line(word: str) -> None:
-    print(f"\n______________________[{word}]______________________________\n")
+    print(f"\n════════════════════════[{word}]════════════════════════\n")
+
+def game():
+    print_line('WELCOME TO PYTHONJACK')
+    number_decks = 6
+    player_chips = 1_000
+
+    player = Player(player_chips)
+    dealer = Dealer()
+    deck = Deck(number_decks)
+
+    deck.shuffle()
 
 
-
+game()
     
