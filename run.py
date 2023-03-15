@@ -21,6 +21,7 @@ def validate_answer(question: str, choices: Sequence[str]) -> bool:
 
 YES_NO = 'yn'
 
+
 Card = collections.namedtuple('Card', ['value', 'suit'])
 
 """
@@ -32,7 +33,7 @@ class Deck:
     suits = "Spades Diamonds Hearts Clubs".split()
     suit_symbols = ['♠','♦','♥','♣']
 
-    def __init__(self, num_decks=1):
+    def __init__(self, number_decks= 1):
         self.number_decks = number_decks
         self.cards = [Card(value, suit) for suit in self.suits for value in self.values] * self.number_decks
         self.length = len(self)
@@ -332,6 +333,7 @@ class Dealer(Hand):
 """
 Game controls and validations
 """
+
 def play_again() -> bool:
     if validate_answer("Would you like to play another game of PythonJack? [y / n]: ", YES_NO):
         clear()
@@ -345,25 +347,52 @@ def game():
     print_line('WELCOME TO PYTHONJACK')
     number_decks = 6
     player_chips = 1_000
-
     player = Player(player_chips)
     dealer = Dealer()
     deck = Deck(number_decks)
 
     deck.shuffle()
 
-while True:
-    if player.chips == 0:
+    while True:
+        if player.chips == 0: player_chips
         print("You have lost all of your money. Game Over")
         break
-    print(f"Percentage of shoe not yet dealt: {len(deck)/(52*number_decks):.1%}")
-    if deck.is_shuffle_time():
-        deck.shuffle_time()
+        print(f"Percentage of shoe not yet dealt: {len(deck)/(52*number_decks):.1%}")
+        if deck.is_shuffle_time():
+            deck.shuffle_time()
 
-    player.wager()
-    dealer.deal_cards(deck)
-    player.deal_cards(deck)
+        player.wager()
+        dealer.deal_cards(deck)
+        player.deal_cards(deck)
 
+        if not player.split_cards:
+            player.player_move(deck)
+            if player.alive:
+                dealer.dealer_move(deck)
+            player.compute_results(dealer)        
+        # SPLIT CARDS (Player)
+        else:
+            if player.alive or player.hand_two.alive:
+                dealer.dealer_move(deck)
+            print("Hand One:")
+            player.compute_results(dealer)
+            print("Hand Two:")
+            player.hand_two.compute_results(dealer)
 
-game()
+    # Chips won by second hand: Added to total balance
+            player.chips += player.hand_two.chips
+
+            player.print_balance()
+        if play_again():
+            player.reset()
+            dealer.reset()
+            continue
+        else:
+            break
+
+    print("Thanks for playing PythonJack. Please gamble responsibly.")
+
+if __name__ == "__main__":
+    game()
+
     
