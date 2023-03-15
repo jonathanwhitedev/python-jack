@@ -136,7 +136,7 @@ and validation steps for hit, stand, double down and splitting card selection.
 
 class Player(Hand):
 
-    def __init__(self, chips, bet= 0, split_cards= False):
+    def __init__(self, chips, bet=0, split_cards=False):
         super().__init__()
         self.chips = chips
         self.bet = bet
@@ -158,10 +158,10 @@ class Player(Hand):
         self.chips += chips
     
     def remove_chips(self, chips: float) -> None:
-        self.chips += chips
+        self.chips -= chips
 
     def print_balance(self):
-        print(f"\n Your chip balance is currently: ${self.chips:,.2f}\n")
+        print(f"\nYour chip balance is currently: ${self.chips:,.2f}\n")
 
     def check_for_blackjack(self):
         if self.hand[0].value == self.hand[1].value:
@@ -354,9 +354,9 @@ def game():
     deck.shuffle()
 
     while True:
-        if player.chips == 0: player_chips
-        print("You have lost all of your money. Game Over")
-        break
+        if player.chips == 0:
+            print("You have lost all of your money. Game Over")
+            break
         print(f"Percentage of shoe not yet dealt: {len(deck)/(52*number_decks):.1%}")
         if deck.is_shuffle_time():
             deck.shuffle_time()
