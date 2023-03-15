@@ -35,8 +35,12 @@ def reg_card_design(card):
     ]
 
     return design
+"""
+Hidden facedown playing card for dealer (normal casino rules)
+"""
 
-hidden_card_design = [
+
+facedown_design = [
      '   ╔════════════╗',
      '   ║░░░░░░░░░░░░║',
      '   ║░░░░░░░░░░░░║',

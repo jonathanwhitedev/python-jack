@@ -120,12 +120,12 @@ class Hand:
     def card_design(self):
         card_list = [design.reg_card_design(card) for card in self.hand]
         design.print_cards(card_list)
-        print(f"\Total of: {self.hand_score()}\n")
+        print(f"Card total of: {self.hand_score()}\n")
 
     def split_card_design(self):
         card_list = [design.split_card_design(card) for card in self.hand]
         design.print_cards(card_list)
-        print(f"\Total of: {self.hand_score()}\n")
+        print(f"Card total of: {self.hand_score()}\n")
 
 """
 class to contain functions for players hands
@@ -328,9 +328,10 @@ class Dealer(Hand):
                 time.sleep(1)
                 self.card_design()
 
+    #function to to hide first card facedown as per normal casion rules
     def dealer_design(self):
-        hidden_card = design.hidden_card_design
-        card_list = [hidden_card] + [design.reg_card_design(card) for card in self.hand [1:]]
+        facedown_card = design.facedown_design
+        card_list = [facedown_card] + [design.reg_card_design(card) for card in self.hand [1:]]
         design.print_cards(card_list)
 
 """
@@ -398,4 +399,3 @@ def game():
 if __name__ == "__main__":
     game()
 
-    
