@@ -164,8 +164,11 @@ class Player(Hand):
         print(f"\nYour chip balance is currently: ${self.chips:,.2f}\n")
 
     def check_for_blackjack(self):
+        return len(self.hand) == 2 and self.hand_score() == 21
+
+    def check_for_split(self):
         if self.hand[0].value == self.hand[1].value:
-            return validate_answer("Do you want to split your cards?: [y / n]: ", YES_NO)
+            return validate_answer("Would you like to split your cards?: [y / n]: ", YES_NO)
         return False
 
     def wager(self):
@@ -247,7 +250,7 @@ class Player(Hand):
                         self.double_down(deck)
                         break
             if action == "h":
-                self.visual_move(deck)
+                self.design_move(deck)
             if action == "s":
                 break
 
