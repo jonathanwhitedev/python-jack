@@ -345,6 +345,14 @@ def game():
 
     deck.shuffle()
 
+while True:
+    if player.chips = 0:
+    print("You have lost all of your money. Game Over")
+        break
+    print(f"Percentage of shoe not yet dealt: {len(deck)/(52*number_decks):2%}")
+    if deck.is_shuffle_time():
+        deck.shuffle_time()
+
 
 game()
     
