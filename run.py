@@ -352,7 +352,7 @@ def play_again() -> bool:
     return False
 
 def print_line(word: str) -> None:
-    print(f"\n♠ ♦ ♥ ♣ ═════════════════════[{word}]═════════════════════ ♣ ♥ ♦ ♠\n")
+    print(f"\n♠ ♦ ♥ ♣ ════════════════════[{word}]════════════════════ ♣ ♥ ♦ ♠\n")
 
 def game():
     print_line('WELCOME TO PYTHONJACK')
