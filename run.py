@@ -11,6 +11,7 @@ import subprocess as sp
 import design
 # IMPORT CARDS FROM DESIGN.PY
 
+
 class Deck:
     """ deck class to set functions for game cards, decks, shuffles, draws """
 
@@ -18,7 +19,7 @@ class Deck:
     suits = "Spades Diamonds Hearts Clubs".split()
     suit_symbols = ['♠','♦','♥','♣']
 
-    def __init__(self, number_decks= 1):
+    def __init__(self, number_decks=1):
         self.number_decks = number_decks
         self.cards = [Card(value, suit) for suit in self.suits
         for value in self.values] * self.number_decks
@@ -46,9 +47,8 @@ class Deck:
 
     def is_shuffle_time(self):
         """Shuffle when deck is less then < 50% full length"""
-        return  len(self) < (self.length / 2)
+        return len(self) < (self.length / 2)
         
-
     def shuffle_time(self):
         """Card shuffle print statment"""
         clear()
@@ -74,7 +74,9 @@ class Deck:
         design.print_cards(c)
 
     def __get_cards__(self, suit_name):
-        return [design.reg_card_design(card) for card in self.cards if card.suit == suit_name]
+        return [design.reg_card_design(card) for card in self.cards
+        if card.suit == suit_name]
+
 
 class Hand:
     """
@@ -225,7 +227,7 @@ class Player(Hand):
         """Split process to display to user"""
         if self.split_cards:
             self.added_wager()
-            self.hand_two = Player(0, split_cards= True, bet= self.bet_two)
+            self.hand_two = Player(0, split_cards=True, bet=self.bet_two)
             transfer_card = self.remove_card()
             self.hand_two.add_card(transfer_card)
             self.hit(deck)
@@ -345,7 +347,7 @@ class Dealer(Hand):
             if self.hand_score() > 21:
                 self.alive = False
                 break
-            if self.hand_score() <17:
+            if self.hand_score() < 17:
                 self.hit(deck)
                 time.sleep(1)
                 self.card_design()
@@ -353,8 +355,9 @@ class Dealer(Hand):
     def dealer_design(self):
         """Function to to hide first card facedown as per normal casion rules"""
         facedown_card = design.facedown_design
-        card_list = [facedown_card] + [design.reg_card_design(card) for card in self.hand [1:]]
+        card_list = [facedown_card] + [design.reg_card_design(card) for card in self.hand[1:]]
         design.print_cards(card_list)
+
 
 YES_NO = 'yn'
 
@@ -363,15 +366,18 @@ Card = collections.namedtuple('Card', ['value', 'suit'])
 Game controls and validations
 """
 
+
 def clear():
     """Run function"""
     sp.run(('cls' if os.name == 'nt' else 'clear'), shell=True)
+
 
 def validate_answer(question: str, choices: Sequence[str]) -> bool:
     """Answer validation"""
     while answer := input(question).lower():
         if answer in choices:
             return answer == choices[0]
+
 
 def play_again() -> bool:
     """User validation after finished round to play again"""
@@ -380,9 +386,11 @@ def play_again() -> bool:
         return True
     return False
 
+
 def print_line(word: str) -> None:
     """Main print variable line"""
     print(f"♠ ♦ ♥ ♣ ════════════════════[{word}]════════════════════ ♣ ♥ ♦ ♠")
+
 
 def game():
     """Main game fixed rules, casino rules for decks, chip allocation and welcome line"""
@@ -433,6 +441,7 @@ def game():
             break
 
     print("\nThanks for playing PythonJack. Please remember to gamble responsibly. \n")
+
 
 if __name__ == "__main__":
     game()
