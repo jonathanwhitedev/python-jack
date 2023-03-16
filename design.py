@@ -31,9 +31,9 @@ def reg_card_design(card):
        '  ║         ║',
       f'  ║   {v:>5} ║',
        '  ╚═════════╝'
-    ]
-
-return design
+       ]
+       
+    return design
 
 
 """
