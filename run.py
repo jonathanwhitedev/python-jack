@@ -179,9 +179,10 @@ class Player(Hand):
             self.print_balance()
             bet = input(f"How much would you like to bet?: $")
             if not bet.isdecimal():
+                print(("Sorry we don't accept decimals, please enter a whole number (eg: 50)"))
                 continue
             elif float(bet) > self.chips:
-                print("Sorry, you don't have enough chips. Place a new amount")
+                print("Sorry, you don't have enough chips. Place a new amount between 1-1000")
             else:
                 self.bet = float(bet)
                 self.remove_chips(float(bet))
@@ -192,6 +193,7 @@ class Player(Hand):
             self.print_balance()
             bet = input(f"How much additonal wager would you like to bet? You may bet up to your original placed bet ${self.bet} or less: $")
             if not bet.isdecimal() or float(bet) > self.bet:
+                print("Please enter a whole number less or equal to you original bet")
                 continue
             elif float(bet) > self.chips:
                 print("You don't have enough chips to place this bet. Place a new amount")
