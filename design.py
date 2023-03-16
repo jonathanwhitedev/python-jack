@@ -33,7 +33,7 @@ def reg_card_design(card):
        '  ╚═════════╝'
     ]
 
-    return design
+return design
 
 
 """
@@ -50,7 +50,7 @@ facedown_design = [
   '  ║░░░░░░░░░║',
   '  ║░░░░░░░░░║',
   '  ╚═════════╝'
-     ]
+ ]
 
 
 """
