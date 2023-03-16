@@ -55,7 +55,7 @@ class Deck:
     def shuffle(self):
         random.shuffle(self.cards)
 
-    #Shuffle when deck is less then < 50% full length
+    """ Shuffle when deck is less then < 50% full length """
     def is_shuffle_time(self):
         return  len(self) < (self.length / 2)
    
@@ -293,7 +293,7 @@ class Player(Hand):
 
 
 """
-class to contain functions for dealers rules of playing and dealing cards
+class to contain functions for dealers rules of playing and dealing cards 
 """
 
 class Dealer(Hand):
@@ -319,7 +319,7 @@ class Dealer(Hand):
         self.card_design()
         time.sleep(0.5)
 
-    #function to ensure dealer only plays (hits) to a max value of 17
+    """ function to ensure dealer only plays (hits) to a max value of 17 """
     def dealer_move(self, deck: Deck) -> None:
         self.card_reveal()
         while True:
@@ -333,15 +333,14 @@ class Dealer(Hand):
                 time.sleep(1)
                 self.card_design()
 
-    #function to to hide first card facedown as per normal casion rules
+    """ function to to hide first card facedown as per normal casion rules """
     def dealer_design(self):
         facedown_card = design.facedown_design
         card_list = [facedown_card] + [design.reg_card_design(card) for card in self.hand [1:]]
         design.print_cards(card_list)
 
-"""
-Game controls and validations
-"""
+
+""" Game controls and validations """
 
 def play_again() -> bool:
     if validate_answer("Would you like to play another game of PythonJack? [y / n]: ".lower(), YES_NO):
@@ -379,7 +378,7 @@ def game():
             if player.alive:
                 dealer.dealer_move(deck)
             player.compute_results(dealer)        
-        # SPLIT CARDS (Hands 1 and 2)
+        """ SPLIT CARDS (Hands 1 and 2) """
         else:
             if player.alive or player.hand_two.alive:
                 dealer.dealer_move(deck)
@@ -388,7 +387,7 @@ def game():
             print("Hand Two:")
             player.hand_two.compute_results(dealer)
 
-            # Chips won by second hand: Added to total balance.
+            """ Chips won by second hand: Added to total balance. """
             player.chips += player.hand_two.chips
 
             player.print_balance()
