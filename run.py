@@ -181,7 +181,7 @@ class Player(Hand):
             self.print_balance()
             bet = input(f"How much would you like to bet?: $")
             if not bet.isdecimal() or str():
-                print(("Sorry we don't accept that character as a bet, please enter a whole number (eg: 50)"))
+                print(("Sorry that was an invalid character, please enter a whole number (eg: 50)"))
                 continue
             elif float(bet) > self.chips:
                 print(f"Sorry, you don't have enough chips. Place a new amount between $1 - ${self.chips:}")
@@ -352,7 +352,7 @@ def play_again() -> bool:
     return False
 
 def print_line(word: str) -> None:
-    print(f"\n♠ ♦ ♥ ♣ ════════════════════[{word}]════════════════════ ♣ ♥ ♦ ♠\n")
+    print(f"♠ ♦ ♥ ♣ ════════════════════[{word}]════════════════════ ♣ ♥ ♦ ♠")
 
 def game():
     print_line('WELCOME TO PYTHONJACK')
