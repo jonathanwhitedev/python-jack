@@ -7,6 +7,11 @@ from typing import Sequence
 import subprocess as sp 
 import design
 
+YES_NO = 'yn'
+
+
+Card = collections.namedtuple('Card', ['value', 'suit'])
+
 """
 PYTHONJACK GAME:
 design.py file for card decoration in game
@@ -18,11 +23,6 @@ def validate_answer(question: str, choices: Sequence[str]) -> bool:
     while answer := input(question).lower():
         if answer in choices:
             return answer == choices[0]
-
-YES_NO = 'yn'
-
-
-Card = collections.namedtuple('Card', ['value', 'suit'])
 
 """
 deck class to set functions for game cards, decks, shuffles, draws.
@@ -71,14 +71,17 @@ class Deck:
         self.cards = [Card(value, suit) for suit in self.suits for value in self.values] * self.number_decks
 
     def deck_visual(self):
-        s = [design.reg_card_design(card) for card in self.cards if card.suit == 'Spades']
-        d = [design.reg_card_design(card) for card in self.cards if card.suit == 'Diamonds']
-        h = [design.reg_card_design(card) for card in self.cards if card.suit == 'Hearts']
-        c = [design.reg_card_design(card) for card in self.cards if card.suit == 'Clubs']
+        s = self.__get_cards__('Spades')
+        d = self.__get_cards__('Diamonds')
+        h = self.__get_cards__('Hearts')
+        c = self.__get_cards__('Clubs')
         design.print_cards(s)
         design.print_cards(d)
         design.print_cards(h)
-        design.print_cards(c)   
+        design.print_cards(c) 
+
+    def __get_cards__(self, suit_name):
+        return [design.reg_card_design(card) for card in self.cards if card.suit == suit_name]
 
 """
 class to contain functions for calculating scores from hands 
@@ -398,4 +401,3 @@ def game():
 
 if __name__ == "__main__":
     game()
-

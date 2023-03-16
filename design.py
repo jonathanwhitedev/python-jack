@@ -37,7 +37,9 @@ def reg_card_design(card):
     return design
 
 
-#Hidden facedown playing card for dealer (normal casino rules)
+"""
+Hidden facedown playing card for dealer (normal casino rules)
+"""
 
 facedown_design = [
      '   ╔════════════╗',
@@ -53,7 +55,9 @@ facedown_design = [
      ]
 
 
-#Smaller cards for space in terminal to play splits
+"""
+Smaller cards for space in terminal to play splits
+"""
 
 def split_card_design(card):
     suits = "Spades Diamonds Hearts Clubs".split()
