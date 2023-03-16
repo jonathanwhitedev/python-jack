@@ -9,7 +9,6 @@ import design
 
 YES_NO = 'yn'
 
-
 Card = collections.namedtuple('Card', ['value', 'suit'])
 
 """
@@ -171,8 +170,9 @@ class Player(Hand):
 
     def check_for_split(self):
         if self.hand[0].value == self.hand[1].value:
-            return validate_answer("Would you like to split your cards?: [y / n]: ", YES_NO)
+            return validate_answer("Would you like to split your cards?: [y / n]: ".lower(), YES_NO)
         return False
+
 
     def wager(self):
         while True:
@@ -201,7 +201,7 @@ class Player(Hand):
                 break
     
     def confirm_double_down(self):
-        return validate_answer("\nYou will get only one more card. Please confirm selection for double down: [y / n] ", YES_NO)
+        return validate_answer("\nYou will get only one more card. Please confirm selection for double down: [y / n] ".lower(), YES_NO)
 
     def double_down(self, deck: Deck) -> None:
         self.added_wager()
@@ -244,9 +244,9 @@ class Player(Hand):
             if self.hand_score() == 21:
                 break
             if len(self.hand) == 2:
-                action = input("Would you like to hit, stand, or double-down? Enter [h, s, or d]: ")
+                action = input("Would you like to hit, stand, or double-down? Enter [h, s, or d]: ").lower()
             else:
-                action = input("Would you like to hit or stand: Enter [h or s]: ")
+                action = input("Would you like to hit or stand: Enter [h or s]: ").lower()
             if action == 'd':
                 if len(self.hand) == 2:
                     if self.confirm_double_down():
@@ -342,7 +342,7 @@ Game controls and validations
 """
 
 def play_again() -> bool:
-    if validate_answer("Would you like to play another game of PythonJack? [y / n]: ", YES_NO):
+    if validate_answer("Would you like to play another game of PythonJack? [y / n]: ".lower(), YES_NO):
         clear()
         return True
     return False
