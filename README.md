@@ -158,7 +158,7 @@ Google Fonts can be found here (https://fonts.google.com/)
 - I used LUCID chart for my wireframes and drew a rough flow chart of what I wanted my layout to look like with responses. I made sure to close the loop of all outcomes so that the game will restart when one has commenced. If given time i will add some more functions to my code such as a bank to give player $1000 at the start.
 
 Flowchart
-![Lucid Chart PythonJack](docs/screenshots/PythonJack-Flowchart.jpeg)
+![Lucid Chart PythonJack](docs/screenshots/PythonJackFlowchart.jpeg)
 
 ## Technology
 __Various technologies were used in the entire process of building this website as follows;__
