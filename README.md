@@ -80,11 +80,11 @@ Python Jack includes the following;
 
 ### Existing Features
 
-- __Balance__ 
+- __Welcome and Balance__ 
 
   - At the beginning of every game, a print statement of current balance will be shown to the player to indicate their value of chips. The player will automatically be shown a balance of $1000 at the very beginning of the game. As the player progresses this will recalculate depending on winnings and losses and will update at the end of every game. The new balance will be shown to the player at the start of the next game versus the dealer. If the player losses all their money it will be game over and a message to confirm this will appear.
 
-  ![Correct](docs/screenshots/correct-answer.png) 
+  ![Welcome and Balance](docs/screenshots/start-game.png) 
 
 - __Another round__ 
 
@@ -96,29 +96,60 @@ Python Jack includes the following;
 
 - __Hidden Dealers Card__ 
 
-- As with any BlackJack game, the dealers last card will always be hidden from the players view and this be displayed as the rearside of the playing card.
+- As with any BlackJack game, the dealers last card will always be hidden from the players view and this be displayed as the rearside of the playing card. Please see example below:
+![Hidden Card](docs/screenshots/hidden-card.png)  
 
-- __Hit, Stick, Double Down__ 
+- __Hit, Stand, Double Down__ 
 
-- As with any BlackJack game, the player has options to Hit (Ask for another card), Stick (stay with the cards and their values), or double down (bet more chips on this turn). A print statement will appear after the cards are drawn to confrim what player would like to do.
+- As with any BlackJack game, the player has options to Hit (Ask for another card), Stick (stay with the cards and their values), or double down (bet more chips on this turn). A print statement will appear after the cards are drawn to confrim what player would like to do. 
 
+![Hit, Stand, Double](docs/screenshots/hit-stand-double.png)
 
+This is further broken down as follows:
 
+- __Hit__
+The Hit option asks the dealer to draw anothe rcard from the deck to add to your already existing total.
+![Hit](docs/screenshots/hidden-card.png)
 
-  ![Incorrect](docs/screenshots/wrong-answer.png)  
+- __Stand__
+The Stand or Stick option tells the dealer you are hppy with the current value of your cards and you would like them to reveal theirs and continue with the game and your hand.
+![Stick](docs/screenshots/hidden-card.png) 
 
+- __Double Down__
+Double down option is a further way to bet a higher stake placed already on your bet. (Usually this is done if you have a weak hand as another card will be drawn from the pack to add to your total) You must place a bet that is less or equal to you first placed bet provided you have the funds.
+![Double Down](docs/screenshots/double-down-function.png) 
+
+- __Split__
+The split option only appears when you have drawn two cards that are of the same value (eg two 2's, or two kings)
+From here you can split these two cards into seperate bets and another card is drawn with them. Again a futher wager or bet must be placed to do so. Please see examples below:
+![Split Pairs](docs/screenshots/split-function.png) 
+![Split One](docs/screenshots/split-function-one.png) 
+![Split Two](docs/screenshots/split-function-two.png) 
+
+- __Player Bust__
+This happens when you have gone over 21 in value with your cards before the dealer.
+![Player Bust](docs/screenshots/player-bust.png)
+
+- __Dealer Bust__
+This happens when the dealer has gone over 21 in value and you win the draw.
+![Dealer Bust](docs/screenshots/dealer-bust.png)
+
+- __Game Over__
+Game Over only appears when you have run out of money or chips and cannot play at the table anymore.
+![Game Over](docs/screenshots/game-over.png)
+
+- __Validation with Letters__
+When prompted for an input from the user the user can either use a lowercaae or uppercase response to avoid confusion. If anything other then a letter appears and is entered, the computer will repeat the reponse for a letter.
+![Game Over](docs/screenshots/capitlisation-(.lower).png)
+
+- __Validation with Numbers__
+When prompted for a Number input from the user the user can only enter a whole number. If this is not provided (either- letter, decimal place, negative, strings, above the chip bank value) a prompt will remind the user of their balance and what they need to enter.
+![Game Over](docs/screenshots/chip-validation-numbers.png)
 
 ### Future features Left to Implement
 
 - A propmt to ask for users name, this could be used to keep highscores saved into a server so that others can compete against them.
 - A login for users to save their details of winnings so they can use these again in future games could also be implemented.
-
-
-## Typography and Colour
-
-- Typography was taken from Google Fonts using 1 base font, "Cormorant Garamond" and "Anton" for 1 text element for the score. I felt this complimented the Christmas theme well, was clean and clear to read and easily accessible. With colour schemes I chose to use 3 Christmas themed colours, Red, Gold and Blue. Being mainly primary colours these work very well together and make the style eye catching. These were applied using hex, red (#7c0017), gold (#d7be69) and blue (#3b81d6c6). Then Black (#000000) and White (#ffffff) were used for the typography for Questions and Buttons.
-
-Google Fonts can be found here (https://fonts.google.com/)
 
 
 ## Wireframes
@@ -231,8 +262,7 @@ __Scoring System for Image and Text Scorecard Testing:__
 
 ### Supported Browsers and Screen Sizes.
   - Testing was carried out on Google Chrome, Safari, and Mozilla Firefox. All rendered the content and was fast and reponsively across these browsers.
-  - Testing was carried out on Macbook Pro M1, Ipad Pro, and Iphone 13 Pro Max models in personal collection. 
-  - There is one media query stepping up sizes after hitting a minimum width of 750px. I designed this mostly as a mobile first application.
+  - Testing was carried out on Macbook Pro M1 (Due to limitations with built in code this was not designed for smaller devices and IOS for iphones) 
 
 ### Unfixed Bugs
 
@@ -280,9 +310,17 @@ __To open Gitpod and Voyager website preview:__
 
 ## Credits 
 
-I will firstly like to credit my fiancé, Toni, for this website and motivating me to get over the line and by taking on more domestic tasks! I was not in a particularly brilliant headspace with less then 2 weeks from finishing JS modules in the elearning to submission. I'd felt the strain of the learning and did not feel confident with handling javascript at all. She was very supportive and this quiz idea relating to christmas was hers. She had already made a question bank from the previous christmas for a company party backed up and saved in her work laptop. These answers were all verified and accurate and were extremely handy to use in this quiz! 
+Again I would firstly like to credit my fiancé, Toni, who kept the house in order whilst I spent 16 hours a day at times on this python project!!
 
- I found a simple quiz project builder on google at https://simplestepscode.com/javascript-quiz-tutorial/ which helped find the basics of making this quiz and took my own spin on it with this finshed result. With thanks to them for their publication in helping me break it down step by step.
+I would like to credit the following links and websites that helped me build this game:
+
+1. APHRX on YouTube (https://www.youtube.com/watch?v=C82s5WufNUA&t=215s)
+This helped me greatly in various areas to implement and structure my code.
+
+2. The following webiste was also a massive help and resource for helping me define functions and get designs for my cards 
+(https://www.askpython.com/python/examples/blackjack-game-using-python)
+
+3. Also (https://bicyclecards.com/how-to-play/blackjack/) which helped me clarify the rules for making this game!
 
 Lastly I would like to thank my mentor, Rohit, for helping impeccably as always with his wisdom and guidance which was very helpful and greatly appreciated indeed.
 
@@ -290,14 +328,18 @@ Content and media inspiration is as follows below;
 
 ### Content 
 
-_ All of the ideas in relation to this quiz including format, image selection, colour schemes were all my own. However the following helped me get there:
+_ The following as already mentioned helped me get to grips with how to approach the coding of this game, I would most likely be lost without it:
 
-- The social icons in the bottom of section of all pages were taken from [Font Awesome](https://fontawesome.com/)
-- The webkit stroke function was found after heavy research in needing a solution to allow text to pop off the background to be unique and more readble against the background colours in the scorecards, this was found at (https://css-tricks.com/adding-stroke-to-web-text/) I then incorporated this into my css for my specific needs.
+1. APHRX on YouTube (https://www.youtube.com/watch?v=C82s5WufNUA&t=215s)
+This helped me greatly in various areas to implement and structure my code.
+
+2. The following webiste was also a massive help and resource for helping me define functions and get designs for my cards 
+(https://www.askpython.com/python/examples/blackjack-game-using-python)
+
 
 ### Media
 
-- All of the Images used on all pages were found on google images (http://google.co.uk/search) these were then resaved as different file names, as text was either in alternate language to english or had spaces and would fail testing or reading for other developers.
+- All media in this file are from screenshots from testing.
 
 ## Thank you for taking the time to view my README file, hope you enjoy the quiz! 
 

@@ -1,3 +1,6 @@
+"""
+Hand class for all rule's and functions
+"""
 from design import Card
 from deck import Deck
 import design

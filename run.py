@@ -3,31 +3,20 @@ PYTHON JACK GAME
 """
 from __future__ import annotations
 import os
-from typing import Sequence
 import subprocess as sp
-from deck import Deck
-from player import Player
 from dealer import Dealer
+from design import validate_answer, YES_NO
+from player import Player
+from deck import Deck
 import design
 
-YES_NO = 'yn'
 
-
-"""
-Game controls and validations
-"""
+# Game controls and validations
 
 
 def clear():
     """Run function"""
     sp.run(('cls' if os.name == 'nt' else 'clear'), shell=True)
-
-
-def validate_answer(question: str, choices: Sequence[str]) -> bool:
-    """Answer validation"""
-    while answer := input(question).lower():
-        if answer in choices:
-            return answer == choices[0]
 
 
 def play_again() -> bool:

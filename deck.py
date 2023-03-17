@@ -1,5 +1,11 @@
+"""
+Deck class for all rule's and functions
+"""
+import time
 import random
 from design import Card
+import design
+from run import clear
 
 
 class Deck:

@@ -3,12 +3,24 @@ Designs and functions of playing cards including
 suits and symbols for use in PythonJack
 """
 import collections
+from typing import Sequence
 
 Card = collections.namedtuple('Card', ['value', 'suit'])
+
+YES_NO = 'yn'
+
 
 def print_line(word: str) -> None:
     """Main print variable line"""
     print(f"♠ ♦ ♥ ♣ ════════════════════[{word}]════════════════════ ♣ ♥ ♦ ♠")
+
+
+def validate_answer(question: str, choices: Sequence[str]) -> bool:
+    """Answer validation"""
+    while answer := input(question).lower():
+        if answer in choices:
+            return answer == choices[0]
+
 
 def print_cards(cardlist):
     """Print cards in terminal with space)"""

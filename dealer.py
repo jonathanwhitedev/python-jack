@@ -1,3 +1,6 @@
+"""
+Dealer class for all rule's and functions
+"""
 import time
 from deck import Deck
 from hand import Hand

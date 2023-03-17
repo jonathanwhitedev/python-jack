@@ -1,7 +1,11 @@
-from deck import Deck
+"""
+Player class for all rule's and functions
+"""
+import time
 from hand import Hand
+from deck import Deck
+from design import print_line, validate_answer, YES_NO
 from dealer import Dealer
-from design import print_line
 
 
 class Player(Hand):
@@ -62,7 +66,7 @@ class Player(Hand):
             if not bet.isdecimal() or str():
                 print(("Sorry that was an invalid character, please enter a whole number (eg: 50)"))
                 continue
-            elif float(bet) > self.chips:
+            if float(bet) > self.chips:
                 print(f"Sorry, you don't have enough chips. Place a new amount between $1 - ${self.chips:}")
             else:
                 self.bet = float(bet)
@@ -77,7 +81,7 @@ class Player(Hand):
             if not bet.isdecimal() or float(bet) > self.bet:
                 print("Please enter a whole number less or equal to you original bet")
                 continue
-            elif float(bet) > self.chips:
+            if float(bet) > self.chips:
                 print(f"You don't have enough chips to place this bet. Place a new amount between $1 - ${self.bet}")
             else:
                 self.bet_two = float(bet)
