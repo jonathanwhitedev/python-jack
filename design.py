@@ -6,6 +6,10 @@ import collections
 
 Card = collections.namedtuple('Card', ['value', 'suit'])
 
+def print_line(word: str) -> None:
+    """Main print variable line"""
+    print(f"♠ ♦ ♥ ♣ ════════════════════[{word}]════════════════════ ♣ ♥ ♦ ♠")
+
 def print_cards(cardlist):
     """Print cards in terminal with space)"""
     for card in zip(*cardlist):

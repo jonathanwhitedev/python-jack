@@ -1,5 +1,6 @@
-from design import Card
 import random
+from design import Card
+
 
 class Deck:
     """ deck class to set functions for game cards, decks, shuffles, draws """
