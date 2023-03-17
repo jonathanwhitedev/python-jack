@@ -8,13 +8,13 @@ Players of the game are given a $1000 playing amount and can bet against and com
 
 ![Responsive Mockup](docs/screenshots/am-i-responsive.png)
 
-The following responsive screensizes of my website can also be found here: (https://ui.dev/amiresponsive?url=https://jonathanwhitedev.github.io/voyager/index.html)
-
 ## How to play Python Jack
 
 If a player gets an exact 21, the player wins against the dealer. Otherwise, in order to win, the sum of the player’s cards must be more than the sum of the dealer’s cards. Each face card has a definite value of 10, whereas the ace can be counted as 1 or 11 suitable to the player’s chances of winning. The value of the rest of the cards is defined by their number.
 
 Standard casino rules:
+
+Full BlackJack casino rules cab be found at this link: [bicyclecards](https://bicyclecards.com/how-to-play/blackjack/)
 
 -__Player is given a $1000 kitty added to their bank at the start of the game, this can be used in increments any increments of $1 to the full $1000. A waged bet of any amount ($1000) starts the game__
 
@@ -50,7 +50,7 @@ Player is able to double down after splitting as well.
 
 As part of the UX specification and planning phase it was noted that there was a lack of free resources to play and practice games such as blackjack online in a safe enviroment, totally add free .
 
-- __As a visiting user, I would like free blackjack related games.__
+- __As a visiting user, I would like a free blackjack related games.__
 
 Over three quarters of those surveyed (100), also came to agreement there were not many quizes online that were free. Many required signing up, and/or applications that wanted money for generated quizes on apps through App Store or Google Play, of which many were very poorly rated. Santa's Big Christmas Quiz will remain free to all and readily available to all who seek it.
 

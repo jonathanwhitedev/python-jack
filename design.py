@@ -2,7 +2,9 @@
 Designs and functions of playing cards including
 suits and symbols for use in PythonJack
 """
+import collections
 
+Card = collections.namedtuple('Card', ['value', 'suit'])
 
 def print_cards(cardlist):
     """Print cards in terminal with space)"""

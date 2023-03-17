@@ -2,80 +2,12 @@
 PYTHON JACK GAME
 """
 from __future__ import annotations
-import random
-import collections
 import time
 import os
 from typing import Sequence
 import subprocess as sp
 import design
-# IMPORT CARDS FROM DESIGN.PY
-
-
-class Deck:
-    """ deck class to set functions for game cards, decks, shuffles, draws """
-
-    values = [str(v) for v in range(2, 11)] + list('JQKA')
-    suits = "Spades Diamonds Hearts Clubs".split()
-    suit_symbols = ['♠', '♦', '♥', '♣']
-
-    def __init__(self, number_decks=1):
-        self.number_decks = number_decks
-        self.cards = [Card(value, suit) for suit in self.suits
-        for value in self.values] * self.number_decks
-        self.length = len(self)
-
-    def __repr__(self):
-        return "Deck()\n" + ''.join(f"({card.value}-{card.suit})" for card in self.cards)
-
-    def __len__(self):
-        return len(self.cards)
-
-    def __getitem__(self, position):
-        return self.cards[position]
-
-    def __setitem__(self, position, value):
-        self.cards[position] = value
-
-    def draw_card(self):
-        """Card pop to draw cards"""
-        return self.cards.pop()
-
-    def shuffle(self):
-        """Card shuffle for cards"""
-        random.shuffle(self.cards)
-
-    def is_shuffle_time(self):
-        """Shuffle when deck is less then < 50% full length"""
-        return len(self) < (self.length / 2)
-
-    def shuffle_time(self):
-        """Card shuffle print statment"""
-        clear()
-        print("Reshuffling the Deck...\n")
-        time.sleep(1)
-        self.reset()
-        self.shuffle()
-
-    def reset(self):
-        """Cards reset after shuffle"""
-        self.cards = [Card(value, suit) for suit in self.suits
-        for value in self.values] * self.number_decks
-
-    def deck_visual(self):
-        """Cards suits from design.py"""
-        s = self.__get_cards__('Spades')
-        d = self.__get_cards__('Diamonds')
-        h = self.__get_cards__('Hearts')
-        c = self.__get_cards__('Clubs')
-        design.print_cards(s)
-        design.print_cards(d)
-        design.print_cards(h)
-        design.print_cards(c)
-
-    def __get_cards__(self, suit_name):
-        return [design.reg_card_design(card) for card in self.cards
-        if card.suit == suit_name]
+from deck import Deck
 
 
 class Hand:
@@ -88,7 +20,8 @@ class Hand:
         self.hand = []
 
     def __repr__(self):
-        return "Hand()\n" + ''.join(f"({card.value}-{card.suit})" for card in self.hand)
+        return "Hand()\n" + ''.join(f"({card.value}-{card.suit})"
+        for card in self.hand)
 
     def add_card(self, *cards: Card) -> None:
         """Add card to back of hand"""
@@ -137,7 +70,8 @@ class Player(Hand):
     class to contain functions for players hands
     calculating results of cards in play
     calculating chips betted with
-    and validation steps for hit, stand, double down and splitting card selection.
+    and validation steps for hit, stand, double down 
+    and splitting card selection.
     """
 
     def __init__(self, chips, bet=0, split_cards=False):
@@ -361,7 +295,6 @@ class Dealer(Hand):
 
 YES_NO = 'yn'
 
-Card = collections.namedtuple('Card', ['value', 'suit'])
 """
 Game controls and validations
 """
@@ -380,8 +313,8 @@ def validate_answer(question: str, choices: Sequence[str]) -> bool:
 
 
 def play_again() -> bool:
-    """User validation after finished round to play again"""
-    if validate_answer("Would you like to play another game of PythonJack? [y / n]: ".lower(), YES_NO):
+    """User validation after finished round to play again or end"""
+    if validate_answer("Press 'y' to replay or 'n'/enter key to exit: ", YES_NO):
         clear()
         return True
     return False
@@ -437,8 +370,7 @@ def game():
             player.reset()
             dealer.reset()
             continue
-        else:
-            break
+        break
 
     print("\nThanks for playing PythonJack. Please remember to gamble responsibly. \n")
 
