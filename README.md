@@ -160,66 +160,44 @@ Flowchart
 
 ## Technology
 __Various technologies were used in the entire process of building this website as follows;__
-- Balsamiq. This was used to make a rough template of the design of my website.
-- GitHub. To build the repository for Voyager and lay the groundwork for its development and deployment of website.
-- GitPod. Where the design came to life in the physical coding of the website building the files and folders and writing the code to commit back to GitHub. This beginning of this Readme file was written before coding took place and extra folders were added for HTML and Assets including CSS and media.
-- HTML. The building block for all the code and written across 5 pages, index, about, spotlight, signup, welcome.
-- CSS. The style of the website linked via stylesheets to the HTML code.
-- JavaScript. Used for all the questions and variables of the quiz, including calculating the score through additions, changing the colour of the question "Green" for correctly answered and "Red" for incorrect answered questions. Additionally, functions were added to change the image and text depending on the Results score.
-- Fontawesome. Used to take social media icons for the bottom of the results page.
-- Google Fonts. All font styles were taken to add a more unique design.
-- Google images. Images taken from searching for Santa cartoon images and of bad santa.
-- W3 Validator. Used to ensure all HTML code was working with no errors.
-- Jigsaw Validator. USed to ensure all CSS code met best practices and was working with no errors.
-- Lightouse. Used to ensure testing of performance met expectations wit no severe errors or performance issues. 
-- JS Hint. This was used to test the functionality of my javascript codes and functions and to ensure nothing was returning errors.
+- Python. Python language was used 100% for the entireity of this project.
+- Pylint. This was used as a command within GitPod to test for the functionality and check for errors and best praxtices in my code.
+- GitHub and GitPod. Where my python code was written, ran, stored and testing carried out.
+- Heroku. This was where the game application was also stored and deployed for palying the game.
 
 ## Testing 
 
-Overall, I am very happy with the testing outcomes with lighthouse, HTML, and CSS validation. Js Hint was an invaluable tool to help make sense of javascript when certain functions were not performing as expected and would give you guidance on how to fix or improve. I had a couple of intances where I had not properly assigned a function, so this as extremely handy as a reminder.
-Jigsaw spotted anothe error I rectified where i was using "padding auto" on a button on line 210 of my CSS file which does nothing! This was swiftly removed as was causing validation issues.
-I have tested this website on a macbook pro with a 32 inch external monitor, an Ipad Pro, and a Iphone 13 pro max. I have also used reponsive design in Google dev tools with other devices such as a Surface Duo, Samsung galaxy devices including the fold'.
-The CSS code was written first and foremost for a smartphone to save on time and to also accept that many people now use hones as a preferred way to browse the web. The ability to be scaled up with media queries for bigger devices when required.I made one small media query to enhance playing the game on bigger devices past 750px width.
+Overall, I am very happy with the testing outcomes with Pylint. This was the choice of PEP8 testing recommended to me by my mentor as it is a superior testing system and already built into GitPod.
+
+Across all 6 files of python code I scored between 9-10 out of 10 with all erros or bugs fixed. There is notibly some issues with string length warnings that wre not fixed. This is due to the fact that although i had tested split the print statements down into wither two statements or seperating the strings of text with double quotation marks ("") this only caused 2 sperate lines of messages to appear in the terminal which did not look professional and read coherantly as normal. This was deliberate in leavinf these in place for this reason alone.
 
 The website runs smoothly across all used devices with no glitches or errors.
 
 ### Performance Testing 
 
-- Lighthouse (Chrome Dev Tools)
-  - Some "Best Practices" issues were returned when passing through Lighthouse on google chrome dev tools [https://developer.chrome.com/docs/lighthouse/overview/] on both the index landing page and the quiz pages. However scores of over 97% were present throughout on Performance, Accessibility and SEO.
-  - I addressed the issues with best practices by removing the font awesome cookies that was attached to the link and href of the index and quiz html pages. These were returning data that google lighthouse was scoring badly.
-  - I addressed the issues further by adding "meta http-equiv="Permissions-Policy" content="interest-cohort=() on line 9 of index and quiz pages as previously lighthouse was reporting an issue with permissions policy. I found this added meta tag on google after searching for the problem. After adding this the errors went away.
-  - With these updated changes the score was improved to 92% as you can see in the screenshots below: 
+- Pylint as mentioned above was used for all my testing as recommended by my mentor. All errors were removed and some exceptions with strings were ignored as previously mentioned.
 
-  Index Page
- ![Lighthouse Test](docs/screenshots/lighthouse-test-index.png)
+- In Heroku the application works efficiently and is seamless.
 
-  Quiz Page (Game Area)
- ![Lighthouse Test](docs/screenshots/lighthouse-test-js.png)
+Please see attached screenshots of test results from pyling in terminal:
 
-### JavaScript Testing 
+Run.py
+![run.py](docs/screenshots/pylint-run.py.png)
 
-- Js Hint
-  - There were a few issues with JS hint i had to learn to encounter which are highlighted here:
-  - I had forgotten in one instance to apply a function correctly on line 122 "initializeQuiz" this helped me realise i had forgotten to add an event listener, which was then swiftly added!
-  - I kept getting a ES6 issue with using const variables in my code for the questions (19 errors!) i added /*jshint esversion: 6 */ on line 1 of the script.js and questions.js file after googling the issue whivh was only related to js hint. I left in place in the code as wasnt affecting the website.
+Deck.py
+![deck.py](docs/screenshots/pylint-deck.py.png)
 
-  All JS code (Combined questions and functions pages)
- ![JS Hint Test](docs/screenshots/js-hint-testing.png)
+Design.py
+![design.py](docs/screenshots/pylint-design.py.png)
 
+Player.py
+![player.py](docs/screenshots/pylint-player.py.png)
 
-### Validator Testing 
+Dealer.py
+![dealer.py](docs/screenshots/pylint-dealer.py.png)
 
-- HTML
-  - No errors were returned when passing through the official ![W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonathanwhitedev.github.io%2Fsanta-quiz%2F) on all pages of website as follows: 
-
- ![HTML](docs/screenshots/html-validation.png)
- 
-
-- CSS
-  - No errors were found on completion when passing through the official ![(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjonathanwhitedev.github.io%2Fvoyager%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-
-  ![CSS](docs/screenshots/css-validation.png)
+Hand.py
+![hand.py](docs/screenshots/pylint-hand.py.png)
  
 
 ### Test Cases
