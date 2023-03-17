@@ -17,7 +17,7 @@ class Deck:
 
     values = [str(v) for v in range(2, 11)] + list('JQKA')
     suits = "Spades Diamonds Hearts Clubs".split()
-    suit_symbols = ['♠','♦','♥','♣']
+    suit_symbols = ['♠', '♦', '♥', '♣']
 
     def __init__(self, number_decks=1):
         self.number_decks = number_decks
@@ -48,7 +48,7 @@ class Deck:
     def is_shuffle_time(self):
         """Shuffle when deck is less then < 50% full length"""
         return len(self) < (self.length / 2)
-        
+
     def shuffle_time(self):
         """Card shuffle print statment"""
         clear()
@@ -106,7 +106,7 @@ class Hand:
 
     def hand_score(self) -> int:
         """scoring system for suits and Ace"""
-        self.card_val = [10 if card.value in ['J','Q','K'] else 1 if card.value == 'A'
+        self.card_val = [10 if card.value in ['J', 'Q', 'K'] else 1 if card.value == 'A'
                          else int(card.value) for card in self.hand]
 
         self.card_scores = dict(zip(self.hand, self.card_val))

@@ -19,7 +19,7 @@ def print_card(*cards):
 def reg_card_design(card):
     """Standard card design for main game"""
     suits = "Spades Diamonds Hearts Clubs".split()
-    suit_symbols = ['♠','♦','♥','♣']
+    suit_symbols = ['♠', '♦', '♥', '♣']
     suit_pairs = dict(zip(suits, suit_symbols))
 
     v = card.value
@@ -60,7 +60,7 @@ facedown_design = [
 def split_card_design(card):
     """Smaller card design for splits (for heroku game area)"""
     suits = "Spades Diamonds Hearts Clubs".split()
-    suit_symbols = ['♠','♦','♥','♣']
+    suit_symbols = ['♠', '♦', '♥', '♣']
     suit_pairs = dict(zip(suits, suit_symbols))
 
     v = card.value
