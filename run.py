@@ -213,7 +213,7 @@ class Player(Hand):
 
     def confirm_double_down(self):
         """User validation to double down"""
-        return validate_answer("\nYou will get only one more card. Please confirm selection for double down: [y / n] ".lower(), YES_NO)
+        return validate_answer("\nYou will get only one more card. Confirm selection for double down: [y / n] ".lower(), YES_NO)
 
     def double_down(self, deck: Deck) -> None:
         """Double down check"""
