@@ -2,7 +2,7 @@
 
 View my live project here! [PythonJack](https://python-jack.herokuapp.com/) 
 
-Python Jack is a interactive app based website providing a terminal to play the popular casino game BlackJack. This condensed easy to read, easy to play game can provide lots of fun to practice the game without using real money. 
+Python Jack is a interactive app based website providing a terminal to play the popular casino game BlackJack. This condensed, easy to read, easy to play game can provide lots of fun to practice the game without using real money. 
 
 Players of the game are given a $1000 playing amount and can bet against and compete with the computer. 
 
@@ -10,13 +10,13 @@ Players of the game are given a $1000 playing amount and can bet against and com
 
 ## How to play Python Jack
 
-If a player gets an exact 21, the player wins against the dealer. Otherwise, in order to win, the sum of the player’s cards must be more than the sum of the dealer’s cards. Each face card has a definite value of 10, whereas the ace can be counted as 1 or 11 depending on the advantage this card brings to you hand. The value of the rest of the cards is defined by their number.
+If a player gets an exact 21, the player wins against the dealer. Otherwise, in order to win, the sum of the player’s cards must be more than the sum of the dealer’s cards. Each face card has a definite value of 10, whereas the ace can be counted as 1 or 11 depending on the advantage this card brings to your hand. The value of the rest of the cards is defined by their number.
 
 Standard casino rules:
 
 Full BlackJack casino rules can be found at this link: [bicyclecards](https://bicyclecards.com/how-to-play/blackjack/)
 
--__Player is given a $1000 kitty added to their bank at the start of the game, this can be used in increments any increments of $1 to the full $1000. A waged bet of any amount ($1000) starts the game__
+-__Player is given a $1000 kitty added to their bank at the start of the game, this can be used in any increments of $1 to the full $1000. A waged bet of any amount ($1000) starts the game__
 
 -__Player vs Dealer:__
 
@@ -48,11 +48,11 @@ Player is able to double down after splitting as well.
 
 - __As a visiting user, I would like a Casino themed game readily available.__
 
-As part of the UX specification and planning phase it was noted that there was a lack of free resources to play and practice games such as blackjack online in a safe enviroment, totally add free .
+As part of the UX specification and planning phase, it was noted that there was a lack of free resources to play and practice games such as blackjack online in a safe enviroment, totally ad free .
 
 - __As a visiting user, I would like a free blackjack related games.__
 
-Over three quarters of those surveyed (100), also came to agreement there were not many quizes online that were free. Many required signing up, and/or applications that wanted money for generated quizes on apps through App Store or Google Play, of which many were very poorly rated. Santa's Big Christmas Quiz will remain free to all and readily available to all who seek it.
+Over three quarters of those surveyed (100), also came to agreement there were not many casino games that were free and didn't require signup.
 
 - __As a visiting user, I would like something easy to use.__
 
@@ -60,7 +60,7 @@ Another shortfall noted was that many casino games such as blackjack online were
 
 - __As a visiting user, I would like my scores to be calculated.__
 
-Many of the people surveyed agreed they wanted a game that saved their progress after each tune of the game. We aim to make a simple scoring function that can handle complex additions easily and make readily availabe to the user.
+Many of the people surveyed agreed they wanted a game that saved their progress after each go. We aim to make a simple scoring function that can handle complex additions easily and can be readily availabe to the user.
 
 
 ## Terminal (GitPod)
@@ -177,7 +177,7 @@ Cards Issues (after)
 ![Cards Issues](docs/screenshots/line-issue-testing.png)
 
 - Spacing.
-Lastly anothe issue with the dimensions of the Heroku app was the initial spacing around word sentences and cards that was pushing the game board up high and this was a slight pain for the user to read everything without scrolling up. I fixed this my removing the new line (\n) in my generic variable print statements and of course as above making the cards slightly smaller. See attached screenshots:
+Lastly another issue with the dimensions of the Heroku app was the initial spacing around word sentences and cards that was pushing the game board up high and this was a slight pain for the user to read everything without scrolling up. I fixed this my removing the new line (\n) in my generic variable print statements and of course as above making the cards slightly smaller. See attached screenshots:
 
 Space Issues (before)
 ![Space Issues](docs/screenshots/card-issues-testing.png)
@@ -187,7 +187,7 @@ Space Issues (after)
 
 Overall, I am very happy with the testing outcomes with Pylint. This was the choice of PEP8 testing recommended to me by my mentor as it is a superior testing system and already built into GitPod.
 
-Across all 6 files of python code I scored between 9-10 out of 10 with all erros or bugs fixed. There is notibly some issues with string length warnings that wre not fixed. This is due to the fact that although i had tested split the print statements down into wither two statements or seperating the strings of text with double quotation marks ("") this only caused 2 sperate lines of messages to appear in the terminal which did not look professional and read coherantly as normal. This was deliberate in leavinf these in place for this reason alone.
+Across all 6 files of python code I scored between 9-10 out of 10 with all erros or bugs fixed. There is notibly some issues with string length warnings that were not fixed. This is due to the fact that although I had tested split the print statements down into wither two statements or seperating the strings of text with double quotation marks ("") this only caused 2 sperate lines of messages to appear in the terminal which did not look professional and read coherantly as normal. This was deliberate in leaving these in place for this reason alone.
 
 The website runs smoothly across all used devices with no glitches or errors.
 
