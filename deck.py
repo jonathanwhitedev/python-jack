@@ -19,7 +19,7 @@ class Deck:
         self.cards = [Card(value, suit) for suit in self.suits
         for value in self.values] * self.number_decks
         self.length = len(self)
-        
+
     def __repr__(self):
         return "Deck()\n" + ''.join(f"({card.value}-{card.suit})" for card in self.cards)
 

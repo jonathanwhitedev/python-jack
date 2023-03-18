@@ -16,7 +16,7 @@ class Hand:
         self.hand = []
 
     def __repr__(self):
-        return "Hand()\n" + ''.join(f"({card.value}-{card.suit})" 
+        return "Hand()\n" + ''.join(f"({card.value}-{card.suit})"
         for card in self.hand)
 
     def add_card(self, *cards: Card) -> None:

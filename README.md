@@ -56,7 +56,7 @@ Over three quarters of those surveyed (100), also came to agreement there were n
 
 - __As a visiting user, I would like something easy to use.__
 
-Another shortfall noted was that many casino games such as blackjack online were extremely spam orientated, with many adverts spilling into the quiz and detracting the user from reading them accurately. Even if some websites had little to no adverts, they were often jumbled and messy, or too full of distracting information that was not clean and easy to use. It was also observed that most users wanted a website that could be read on a mobile or tablet rather then a computer that had easy to read fonts no matter the display used. Almost all that were surveyed in the UX consulation stage agreed there was no one webbased format that provided an easy to use game online.
+Another shortfall noted was that many casino games such as blackjack online were extremely spam orientated, with many adverts spilling into the game and detracting the user from reading them accurately. Even if some websites had little to no adverts, they were often jumbled and messy, or too full of distracting information that was not clean and easy to use. It was also observed that most users wanted a website that could be read on a mobile or tablet rather then a computer that had easy to read fonts no matter the display used. Almost all that were surveyed in the UX consulation stage agreed there was no one webbased format that provided an easy to use game online.
 
 - __As a visiting user, I would like my scores to be calculated.__
 
@@ -197,7 +197,7 @@ The website runs smoothly across all used devices with no glitches or errors.
 
 - Pylint as mentioned above was used for all my testing as recommended by my mentor. All errors were removed and some exceptions with strings were ignored as previously mentioned.
 
-- In Heroku the application works efficiently and is seamless.
+- In Heroku the application works efficiently and seamlessly.
 
 Please see attached screenshots of test results from pyling in terminal:
 
@@ -225,7 +225,7 @@ __User places wager:__
 1. At the beginning of the game the user is given a $1000 wager in chips to use to bet. When the user is asked how much they would like to bet they must input a whole number equal to or less then 1000. If anything other then a whole number is entered, the computer will give clues as to what is required as a valif input from the user. Please see attached screenshots below:
 
  ![Start Game](docs/screenshots/start-game.png)
- ![User incorrect iinputs for betting](docs/screenshots/chip-validation-numbers.png)
+ ![User incorrect inputs for betting](docs/screenshots/chip-validation-numbers.png)
 
  __Hit Function Testing:__
  1. User chooses to "Hit" by placing a h or H as a command. Again this must be these in lower or uppercase as the request will be sent again.
@@ -270,44 +270,47 @@ __Split:__
 There were no bugs present that were unfixed. There were some recommendations as mentioned to fix the line length in some files but this was ignored for reasons already explained.
 
 ## Deployment
-  - The site was deployed to GitHub pages. The live link can be found here - https://github.com/jonathanwhitedev/santa-quiz
+  - The site was deployed to Heroku and GitHub. The live link can be found here - https://python-jack.herokuapp.com/ and https://github.com/jonathanwhitedev/python-jack
 
-  __To deploy the project:__
-   1. In the [GitHub repository](https://github.com/jonathanwhitedev/santa-quiz), Navigate to the settings tab (small red box in image below).
+  __To deploy the project to GitHub:__
+   1. In the [GitHub repository](https://github.com/jonathanwhitedev/python-jack), Navigate to the settings tab (small red box in image below).
    2. Once in the settings, navigate to the pages tab on the left hand side.
    3. In the build and deployment section under Branch, select the "master" branch and click Save.
-   4. Once the master branch has been selected, the page will be automatically refreshed and a display indicates the successful deployment and the link to the address as below (large red box).
+   4. Once the master branch has been selected, the page will be automatically refreshed and a display indicates the successful deployment and the link to the address as below.
 
-   ![Deployment](docs/screenshots/repository-1.png)
+    __To deploy the project to Heroku:__
+   1. In the [Heroku Dashboard](https://dashboard.heroku.com/apps), Navigate to the new tab and click on it then click on create new app (small red box in image below).
+   ![Deployment](docs/screenshots/heroku-create-app.png)
 
-__To open Gitpod and Voyager website preview:__
-   1. In the [GitHub repository](https://github.com/jonathanwhitedev/santa-quiz), click the green Gitpod button. This will open GitPod.
-   2. Once in GitPod, click the tab hamburger button in top left corner, navigate to Terminal and highlight and click "New Terminal".
-   3. In the Terminal after gitpod/workspace/santa-quiz, type the following command "python3 -m http.server" and hit the enter key.
-   4. Once entered correctly a pop up will appear in bottom left corner displaying a service port is available. Click "Open Browser" and the website preview will open in a brand new tab.
-   5. All steps pictured below and highlighted in red boxes.
+   2. Once in the create, give the file a name and select your region and save the changes by clicking create app. (See red boxes)
+   ![Deployment](docs/screenshots/heroku-create.png)
 
-   ![Deployment](docs/screenshots/repository.png)
-   ![Deployment](docs/screenshots/terminal-commands1.png)
-   ![Deployment](docs/screenshots/terminal-command2.png)
+   3. From here its time to connect to your GitHub code and repository. Click deply tab 1, navigate to step 2 and click GitHub. From here at step 3 you can now connect this to GitHub by enetering the name of the repository from there and clicking connect in bottom corner. See image below:
+   ![Deployment](docs/screenshots/heroku-github.png)
+
+   4. Now it is time to config vars in the settings tab, scroll down to config vars and enter "PORT" in KEY and "8000" as the Value.
+   ![Deployment](docs/screenshots/heroku-config.png)
+
+   5. Lastly connect the languages you have used in GitHub to Heroku by remaining in the settings tab and scrolling doen to "Buildpacks" from here click on "add buildpack" And select "python" and "nodejs" and once highlighted save these changes. 
+   ![Deployment](docs/screenshots/heroku-buildpack.png)
+
+   6. From here you are now ready to launch the app in the Heroku deployment terminal to play the game or test.
+   ![Deployment](docs/screenshots/heroku-open-app.png)
 
 ### Extra Deployment Tasks
  __To run the website on a local screen:__
-   1. Go to the [GitHub repository](https://github.com/jonathanwhitedev/santa-quiz).
+   1. Go to the [GitHub repository](https://github.com/jonathanwhitedev/python-jack).
    2. Once in there, click on the green Code button and Download ZIP.
    3. Extract the ZIP file on your local machine.
    4. Run the index.html file in a browser.
-   5. All steps pictured below with red highlighted boxes.
-
-   ![Deployment](docs/screenshots/local-website.png)
 
  __To clone the repo:__
-   1. Go to the [GitHub repository](https://github.com/jonathanwhitedev/santa-quiz).
+   1. Go to the [GitHub repository](https://github.com/jonathanwhitedev/python-jack).
    2. Click on the green Code button and directly underneath as shown, copy the HTTPs link there.
    3. Open a GitBash terminal and navigate to the directory where you want to locate the clone.
    4. Type "git clone" and paste the copied HTTPs link, press the enter key to begin the clone process.
 
-   ![Deployment](docs/screenshots/clone-repo.png)
+   ![Deployment](docs/screenshots/github-clone.png)
 
 ## Credits 
 
@@ -342,6 +345,6 @@ This helped me greatly in various areas to implement and structure my code.
 
 - All media in this file are from screenshots from testing.
 
-## Thank you for taking the time to view my README file, hope you enjoy the quiz! 
+## Thank you for taking the time to view my README file, hope you enjoy the BlackJack! 
 
 ## Jonathan White
