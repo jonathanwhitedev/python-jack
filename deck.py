@@ -5,7 +5,6 @@ import time
 import random
 from design import Card
 import design
-from run import clear
 
 
 class Deck:
@@ -20,7 +19,7 @@ class Deck:
         self.cards = [Card(value, suit) for suit in self.suits
         for value in self.values] * self.number_decks
         self.length = len(self)
-
+        
     def __repr__(self):
         return "Deck()\n" + ''.join(f"({card.value}-{card.suit})" for card in self.cards)
 
@@ -47,7 +46,6 @@ class Deck:
 
     def shuffle_time(self):
         """Card shuffle print statment"""
-        clear()
         print("Reshuffling the Deck...\n")
         time.sleep(1)
         self.reset()

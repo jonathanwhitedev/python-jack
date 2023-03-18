@@ -167,6 +167,26 @@ __Various technologies were used in the entire process of building this website 
 
 ## Testing 
 
+I had several issues during making my code including getting the dealers hidden card to display, lots of indentation issues which were swiftly sorted out and many more. The issues i found during deployment are listed below:
+
+- Cards.
+Some issues were found and fixed with the cards not displaying properly in a row when 5 or more were drawn into the heroku site. This caused the cards to be squashed up and unreadable. I fixed this by making the cards dimensions smaller in the design.py file. This meant that 6 cards could be drawn moving on. Please see attached results of this:
+
+Cards Issues (before)
+![Cards Issues](docs/screenshots/space-issue-testing.png)
+
+Cards Issues (after)
+![Cards Issues](docs/screenshots/line-issue-testing.png)
+
+- Spacing.
+Lastly anothe issue with the dimensions of the Heroku app was the initial spacing around word sentences and cards that was pushing the game board up high and this was a slight pain for the user to read everything without scrolling up. I fixed this my removing the new line (\n) in my generic variable print statements and of course as above making the cards slightly smaller. See attached screenshots:
+
+Space Issues (before)
+![Space Issues](docs/screenshots/card-issues-testing.png)
+
+Space Issues (after)
+![Space Issues](docs/screenshots/card-issue-fixed.png)
+
 Overall, I am very happy with the testing outcomes with Pylint. This was the choice of PEP8 testing recommended to me by my mentor as it is a superior testing system and already built into GitPod.
 
 Across all 6 files of python code I scored between 9-10 out of 10 with all erros or bugs fixed. There is notibly some issues with string length warnings that wre not fixed. This is due to the fact that although i had tested split the print statements down into wither two statements or seperating the strings of text with double quotation marks ("") this only caused 2 sperate lines of messages to appear in the terminal which did not look professional and read coherantly as normal. This was deliberate in leavinf these in place for this reason alone.
@@ -200,51 +220,54 @@ Hand.py
 ![hand.py](docs/screenshots/pylint-hand.py.png)
  
 
-### Test Cases
-__Index Page Testing:__
-1. User hovers over on the Begin option on the landing index page. A curser pointer hand will be displayed. User should be redirected to Quiz start page first question when clicked upon. Working as expected every time.
+### Test Cases (Validations)
+__User places wager:__
+1. At the beginning of the game the user is given a $1000 wager in chips to use to bet. When the user is asked how much they would like to bet they must input a whole number equal to or less then 1000. If anything other then a whole number is entered, the computer will give clues as to what is required as a valif input from the user. Please see attached screenshots below:
 
- ![Begin Button](docs/screenshots/begin-button.png)
- ![Quiz Start](docs/screenshots/quiz-page-test.png)
+ ![Start Game](docs/screenshots/start-game.png)
+ ![User incorrect iinputs for betting](docs/screenshots/chip-validation-numbers.png)
 
- __Social Link Testing:__
- 1. User hovers over any of the 3 social media links at bottom of page on Inde Landing page and also the Results pages of the end of the quiz. A curser pointer hand appears directly over the link.
- 2. A pop up text also appears on hover that displays a message that the website will open on in a new tab. 
- 3. When clicked upon any of the 3 links, it will open in a seperate new tab.
- 4. All testing was completed, and all was working satisfactory.
- 5. See Screenshots below of test outcomes.
+ __Hit Function Testing:__
+ 1. User chooses to "Hit" by placing a h or H as a command. Again this must be these in lower or uppercase as the request will be sent again.
+ 2. On correct input, user will recieve another card to their hand.
 
- ![Social Link Test](docs/screenshots/footer-social.png)
- ![Social Link Test](docs/screenshots/social-media-links.png)
+ ![Hit](docs/screenshots/hit-function.png)
 
- __Quiz Button Testing:__
- 1. User clicks on any answer button between (A-D) in the "Quiz" page, this was tested for fast accurate response to move to the next question.
- 2. When user clicks on a correctly answered question the span of the button will change colour to 'Green' before moving to next question, this is working correctly only on the correct answers.
- 3. When user clicks on a incorrectly answered question the span of the button will change colour to 'Red' before moving to next question, this is working correctly only on the incorrect answers.
- 4. "Skip Question" button works to provide an easy way of skipping the question without answering it. This will prevent the user picking up any points and a total of none will be given if every question is subsequently skipped. This is working as expected.
- 5. "Check Answers" button appears on the scorecard at the end of the quiz and works correctly, displaying all the correct answers for the questions in a new container.
- 6. "Restart Quiz" also appears on scorecard and answer cards at the end of the quiz. These correctly move the user back to question 1 of the quiz.
+ __Stand Function Testing:__
+ 1. User chooses to "Stand" by placing a s or S as a command. This must be these in lower or uppercase as the request will be sent again.
+ 2. On correct input, user will recieve no more cards to their hand and the dealer deals themselves and finishes the game.
 
-![Button Test Colour Change Green](docs/screenshots/correct-answer-green.png)
-![Button Test Colour Change Red](docs/screenshots/wrong-answer-red.png)
+ ![Stand](docs/screenshots/stand-function.png)
 
-__Scoring System for Image and Text Scorecard Testing:__
- 1. User plays the quiz of 15 questions and depending upon the results gets given a different image/text scorecard based on final calculation (3 Images/3 Texts total) All 3 of these outcomes have been tested extensively ranging from deliberately scoring every score between 1 -15 correctly with no issues found.
- 2. If the player gets a score of 7 or less (<=7) BAD SANTA! appears with the image from the film bad santa.
- 3. If the player gets a score of 14 or less (<=14) SANTA BABY! appears with the relavent image.
- 4. If the player gets a maximum score of 15 (default score)) YOU'RE A WINNER! appears with the relavent image.
+__Double Down:__
+ 1.  User chooses to "Double Down" by placing a d or D as a command. This must be these in lower or uppercase as the request will be sent again.
+ 2. On correct input, user will recieve the option to bet a further amount of chips and must place it to atleast equal of less then the original placed bet.
+ 3. Once wager has been placed the next card drawn by dealer will be revealed.
 
-![BAD SANTA](docs/screenshots/badsanta-test.png)
-![SANTA BABY](docs/screenshots/santababy-test.png)
-![YOU'RE A WINNER](docs/screenshots/winner-test.png)
+ ![Double Down](docs/screenshots/double-down-function.png)
+
+__Split:__
+ 1. If 2 cards of equal value appear in the hand for the user, they will be given the coice to split if they chose. User chooses to "Split" by placing a s or S as a command. This must be these in lower or uppercase as the request will be sent again.
+ 2. On correct input, user will recieve the option to bet a further amount of chips and must place it to atleast equal of less then the original placed bet.
+ 3. Once wager has been placed the original cards dealt are split into 2 seperate hands and the new first hand has a card drawn by dealer and the new value of this hand is shown.
+ 4. The user can chose again if to Hit, Stick or Double Down and repeat the process for this.
+ 5. Once this is complete the dealer draws a second card to the new second hand and the value is shown.
+ 6. The user can chose again if to Hit, Stick or Double Down and repeat the process for this.
+ 7. If these cards are successful double the winnings can be won and will be added to there wager.
+
+ See below screenshots:
+
+ ![Split](docs/screenshots/split-function.png)
+ ![Split Hand One](docs/screenshots/split-function-one.png)
+ ![Split Hand Two](docs/screenshots/split-function-two.png)
 
 ### Supported Browsers and Screen Sizes.
   - Testing was carried out on Google Chrome, Safari, and Mozilla Firefox. All rendered the content and was fast and reponsively across these browsers.
-  - Testing was carried out on Macbook Pro M1 (Due to limitations with built in code this was not designed for smaller devices and IOS for iphones) 
+  - Testing was carried out on Macbook Pro M1 (Due to limitations with built in code this was not designed for smaller devices and IOS for iphones so was not able to properly test on mobile devices) 
 
 ### Unfixed Bugs
 
-There were no bugs present that were unfixed. There were some recommendations that there were some unused variables in JSHint however these are not being used as JavaScript functions but for styling purposes in CSS. 
+There were no bugs present that were unfixed. There were some recommendations as mentioned to fix the line length in some files but this was ignored for reasons already explained.
 
 ## Deployment
   - The site was deployed to GitHub pages. The live link can be found here - https://github.com/jonathanwhitedev/santa-quiz

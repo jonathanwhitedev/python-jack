@@ -44,6 +44,7 @@ def game():
             break
         print(f"Percentage of shoe not yet dealt: {len(deck)/(52*number_decks):.1%}")
         if deck.is_shuffle_time():
+            clear()
             deck.shuffle_time()
 
         player.wager()
