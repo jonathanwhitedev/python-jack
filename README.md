@@ -10,11 +10,11 @@ Players of the game are given a $1000 playing amount and can bet against and com
 
 ## How to play Python Jack
 
-If a player gets an exact 21, the player wins against the dealer. Otherwise, in order to win, the sum of the player’s cards must be more than the sum of the dealer’s cards. Each face card has a definite value of 10, whereas the ace can be counted as 1 or 11 suitable to the player’s chances of winning. The value of the rest of the cards is defined by their number.
+If a player gets an exact 21, the player wins against the dealer. Otherwise, in order to win, the sum of the player’s cards must be more than the sum of the dealer’s cards. Each face card has a definite value of 10, whereas the ace can be counted as 1 or 11 depending on the advantage this card brings to you hand. The value of the rest of the cards is defined by their number.
 
 Standard casino rules:
 
-Full BlackJack casino rules cab be found at this link: [bicyclecards](https://bicyclecards.com/how-to-play/blackjack/)
+Full BlackJack casino rules can be found at this link: [bicyclecards](https://bicyclecards.com/how-to-play/blackjack/)
 
 -__Player is given a $1000 kitty added to their bank at the start of the game, this can be used in increments any increments of $1 to the full $1000. A waged bet of any amount ($1000) starts the game__
 
@@ -66,13 +66,11 @@ Many of the people surveyed agreed they wanted a game that saved their progress 
 ## Terminal (GitPod)
 The built in Terminal in GitPod can be used to play this game. This was used for extensive testing of the game for deployment to Heroku.
 
-![Landing Page](docs/screenshots/home-page.png)
-
 ## Terminal (Heroku)
 
 The deployed project is playable via Heroku as shown below. This is the area visiters of the site will play. 
 
-![Quiz Page](docs/screenshots/questions-page.png)
+![PythonJack](https://python-jack.herokuapp.com/)
 
 ## Features 
 
@@ -153,7 +151,7 @@ When prompted for a Number input from the user the user can only enter a whole n
 
 
 ## Wireframes
-- I used LUCID chart for my wireframes and drew a rough flow chart of what I wanted my layout to look like with responses. I made sure to close the loop of all outcomes so that the game will restart when one has commenced. If given time i will add some more functions to my code such as a bank to give player $1000 at the start.
+- I used LUCID chart for my wireframes and drew a rough flow chart of what I wanted my layout to look like with responses. I made sure to close the loop of all outcomes so that the game will restart when one has commenced. If given time i will add some more functions to my code such as a bank to give player $1000 at the start. [This was later realised and completed!!]
 
 Flowchart
 ![Lucid Chart PythonJack](docs/screenshots/PythonJackFlowchart.jpeg)
